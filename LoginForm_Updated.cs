@@ -17,12 +17,12 @@ namespace TravelEase
             this.Text = "Login";
             this.Size = new Size(400, 350);
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.White;
+            this.BackColor = ColorTranslator.FromHtml("#BFD7EA");
 
             lblTitle = new Label
             {
                 Text = "TravelEase Login",
-                Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                Font = new Font("Tahoma", 16, FontStyle.Bold),
                 ForeColor = Color.FromArgb(30, 30, 60),
                 AutoSize = true,
                 Location = new Point(110, 20)
@@ -32,7 +32,7 @@ namespace TravelEase
             {
                 Text = "Select Role:",
                 Location = new Point(50, 80),
-                Font = new Font("Segoe UI", 10),
+                Font = new Font("Calibri", 10),
                 AutoSize = true
             };
 
@@ -50,7 +50,7 @@ namespace TravelEase
             {
                 Text = "Username:",
                 Location = new Point(50, 120),
-                Font = new Font("Segoe UI", 10),
+                Font = new Font("Calibri ", 10),
                 AutoSize = true
             };
 
@@ -64,7 +64,7 @@ namespace TravelEase
             {
                 Text = "Password:",
                 Location = new Point(50, 160),
-                Font = new Font("Segoe UI", 10),
+                Font = new Font("Calibri", 10),
                 AutoSize = true
             };
 
@@ -77,10 +77,10 @@ namespace TravelEase
 
             btnLogin = new Button
             {
-                Text = "🔐 Login",
+                Text = "LOGIN",
                 Location = new Point(150, 200),
                 Width = 180,
-                BackColor = Color.FromArgb(50, 50, 90),
+                BackColor = Color.FromArgb(11, 57, 84),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
             };
@@ -89,10 +89,10 @@ namespace TravelEase
 
             btnRegister = new Button
             {
-                Text = "📝 Register",
+                Text = "REGISTER",
                 Location = new Point(150, 240),
                 Width = 180,
-                BackColor = Color.FromArgb(30, 130, 76),
+                BackColor = Color.FromArgb(11, 57, 84),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
             };
@@ -111,6 +111,24 @@ namespace TravelEase
         {
             string selected = cmbRole.SelectedItem.ToString();
             btnRegister.Visible = selected != "Admin";
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // LoginForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)

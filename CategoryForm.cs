@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public CategoryForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(191, 215, 234);
 
             Label lbl = new Label
             {
                 Text = "🗂️ Manage Categories",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -39,6 +40,24 @@ namespace TravelEase.Forms
             btnAdd.FlatAppearance.BorderSize = 0;
 
             this.Controls.AddRange(new Control[] { lbl, lstCategories, txtNew, btnAdd });
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CategoryForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "CategoryForm";
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

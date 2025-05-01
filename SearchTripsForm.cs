@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public SearchTripsForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(191, 215, 234);
 
             Label lbl = new Label
             {
                 Text = "🔍 Search Trips",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -37,6 +38,24 @@ namespace TravelEase.Forms
 
             this.Controls.Add(lbl);
             this.Controls.Add(dgv);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // SearchTripsForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "SearchTripsForm";
+            this.Load += new System.EventHandler(this.SearchTripsForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void SearchTripsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

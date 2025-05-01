@@ -27,13 +27,13 @@ namespace TravelEase.Forms
             {
                 Width = sidebarMinWidth,
                 Dock = DockStyle.Left,
-                BackColor = Color.FromArgb(30, 30, 60)
+                BackColor = Color.FromArgb(11, 57, 84)
             };
 
             contentPanel = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.White
+                BackColor = Color.FromArgb(191, 215, 234)
             };
 
             sidebar.MouseEnter += Sidebar_MouseEnter;
@@ -78,7 +78,7 @@ namespace TravelEase.Forms
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI", 10),
                 ForeColor = Color.White,
-                BackColor = Color.FromArgb(50, 50, 100),
+                BackColor = Color.FromArgb(11,57,84),
                 TextAlign = ContentAlignment.MiddleCenter
             };
             btn.FlatAppearance.BorderSize = 0;
@@ -150,6 +150,24 @@ namespace TravelEase.Forms
             var form = new CategoryForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AdminMainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AdminMainForm";
+            this.Load += new System.EventHandler(this.AdminMainForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)

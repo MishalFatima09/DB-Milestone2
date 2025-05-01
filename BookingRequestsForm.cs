@@ -39,5 +39,23 @@ namespace TravelEase.Forms
             this.Controls.Add(lbl);
             this.Controls.Add(dgv);
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // BookingRequestsForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "BookingRequestsForm";
+            this.Load += new System.EventHandler(this.BookingRequestsForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void BookingRequestsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

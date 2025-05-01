@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public UserManagementForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = ColorTranslator.FromHtml("#BFD7EA");
 
             Label lbl = new Label
             {
                 Text = "👤 User Management",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -37,6 +38,24 @@ namespace TravelEase.Forms
 
             this.Controls.Add(lbl);
             this.Controls.Add(dgv);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // UserManagementForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "UserManagementForm";
+            this.Load += new System.EventHandler(this.UserManagementForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void UserManagementForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

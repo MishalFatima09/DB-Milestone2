@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public AssignResourcesForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(191, 215, 234);
 
             Label lbl = new Label
             {
                 Text = "📦 Assign Resources",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -35,6 +36,24 @@ namespace TravelEase.Forms
 
             this.Controls.Add(lbl);
             this.Controls.Add(dgv);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AssignResourcesForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AssignResourcesForm";
+            this.Load += new System.EventHandler(this.AssignResourcesForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void AssignResourcesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

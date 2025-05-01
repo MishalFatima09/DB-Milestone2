@@ -96,5 +96,23 @@ namespace TravelEase
                 lblEmail, txtEmail, lblPhone, txtPhone, btnSubmit
             });
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // RegisterForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

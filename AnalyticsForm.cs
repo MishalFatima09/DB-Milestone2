@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public AnalyticsForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(191, 215, 234);
 
             Label lbl = new Label
             {
                 Text = "📊 Analytics",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -37,6 +38,24 @@ namespace TravelEase.Forms
 
             this.Controls.Add(lbl);
             this.Controls.Add(dgv);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AnalyticsForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AnalyticsForm";
+            this.Load += new System.EventHandler(this.AnalyticsForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void AnalyticsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

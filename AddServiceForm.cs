@@ -9,12 +9,13 @@ namespace TravelEase.Forms
         public AddServiceForm()
         {
             this.Dock = DockStyle.Fill;
-            this.BackColor = Color.White;
+            this.BackColor = Color.FromArgb(191, 215, 234);
 
             Label lbl = new Label
             {
                 Text = "➕ Add Service",
                 Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
                 Location = new Point(30, 20),
                 AutoSize = true
             };
@@ -44,6 +45,24 @@ namespace TravelEase.Forms
             btnSubmit.FlatAppearance.BorderSize = 0;
 
             this.Controls.AddRange(new Control[] { lbl, lblName, txtName, lblType, cmbType, btnSubmit });
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AddServiceForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AddServiceForm";
+            this.Load += new System.EventHandler(this.AddServiceForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void AddServiceForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
