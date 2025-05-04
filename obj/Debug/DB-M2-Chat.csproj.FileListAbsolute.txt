@@ -16,7 +16,6 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.Assign
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.BookingRequestsForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.CategoryForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.EditProfileForm.resources
-C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Form1.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.ManageTripsForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.MyBookingsForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.MyServicesForm.resources

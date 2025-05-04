@@ -4,87 +4,20 @@ using System.Windows.Forms;
 
 namespace TravelEase.Forms
 {
-    public class AdminMainForm : Form
+    public partial class AdminMainForm : Form
     {
-        private Panel sidebar, contentPanel;
-        private System.Windows.Forms.Timer sidebarTimer;
         private bool isExpanded = false;
         private int sidebarMaxWidth = 200;
         private int sidebarMinWidth = 50;
 
-        private Label lblTitle;
-        private Button btnUserMgmt;
-        private Button btnCategoryMgmt;
-        private Button btnAnalytics;
-
         public AdminMainForm()
         {
-            this.Text = "Admin Panel";
-            this.Size = new Size(1000, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            sidebar = new Panel
-            {
-                Width = sidebarMinWidth,
-                Dock = DockStyle.Left,
-                BackColor = Color.FromArgb(11, 57, 84)
-            };
-
-            contentPanel = new Panel
-            {
-                Dock = DockStyle.Fill,
-                BackColor = Color.FromArgb(191, 215, 234)
-            };
-
-            sidebar.MouseEnter += Sidebar_MouseEnter;
-            sidebar.MouseLeave += Sidebar_MouseLeave;
-
-            sidebarTimer = new System.Windows.Forms.Timer { Interval = 10 };
-            sidebarTimer.Tick += SidebarTimer_Tick;
-
-            lblTitle = new Label
-            {
-                Text = "🛠️",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 14, FontStyle.Bold),
-                Dock = DockStyle.Top,
-                Height = 60,
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-
-            btnUserMgmt = CreateSidebarButton("👤", "User Management", 70);
-            btnCategoryMgmt = CreateSidebarButton("🗂️", "Categories", 120);
-            btnAnalytics = CreateSidebarButton("📊", "Analytics", 170);
-
-            sidebar.Controls.AddRange(new Control[] { lblTitle, btnUserMgmt, btnCategoryMgmt, btnAnalytics });
-            this.Controls.Add(contentPanel);
-            this.Controls.Add(sidebar);
-
-            btnUserMgmt.Click += btnUserMgmt_Click;
-            btnCategoryMgmt.Click += btnCategoryMgmt_Click;
-            btnAnalytics.Click += btnAnalytics_Click;
+            InitializeComponent();
         }
 
-        private Button CreateSidebarButton(string icon, string label, int top)
+        private void AdminMainForm_Load(object sender, EventArgs e)
         {
-            var btn = new Button
-            {
-                Text = icon,
-                Tag = label,
-                Width = sidebarMinWidth - 10,
-                Height = 40,
-                Left = 5,
-                Top = top,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 10),
-                ForeColor = Color.White,
-                BackColor = Color.FromArgb(11,57,84),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-            btn.FlatAppearance.BorderSize = 0;
-            btn.MouseEnter += Sidebar_MouseEnter;
-            btn.MouseLeave += Sidebar_MouseLeave;
-            return btn;
+            // Load logic here if needed
         }
 
         private void Sidebar_MouseEnter(object sender, EventArgs e)
@@ -125,6 +58,7 @@ namespace TravelEase.Forms
         {
             lblTitle.Text = expanded ? "🛠️  Admin" : "🛠️";
             lblTitle.TextAlign = expanded ? ContentAlignment.MiddleLeft : ContentAlignment.MiddleCenter;
+
             foreach (Control ctrl in sidebar.Controls)
             {
                 if (ctrl is Button btn && btn.Tag is string label)
@@ -150,24 +84,6 @@ namespace TravelEase.Forms
             var form = new CategoryForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // AdminMainForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AdminMainForm";
-            this.Load += new System.EventHandler(this.AdminMainForm_Load);
-            this.ResumeLayout(false);
-
-        }
-
-        private void AdminMainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)

@@ -1,90 +1,24 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace TravelEase.Forms
 {
-    public class TravelerMainForm : Form
+    public partial class TravelerMainForm : Form
     {
-        private Panel sidebar, contentPanel;
-        private System.Windows.Forms.Timer sidebarTimer;
+        // expansion state and size limits
         private bool isExpanded = false;
         private int sidebarMaxWidth = 200;
         private int sidebarMinWidth = 50;
 
-        private Label lblTitle;
-        private Button btnSearchTrips;
-        private Button btnMyBookings;
-        private Button btnProfile;
-
         public TravelerMainForm()
         {
-            this.Text = "Traveler Panel";
-            this.Size = new Size(1000, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            sidebar = new Panel
-            {
-                Width = sidebarMinWidth,
-                Dock = DockStyle.Left,
-                BackColor = Color.FromArgb(11, 57, 84)
-            };
-
-            contentPanel = new Panel
-            {
-                Dock = DockStyle.Fill,
-                BackColor = ColorTranslator.FromHtml("#BFD7EA")
-            };
-
-            sidebar.MouseEnter += Sidebar_MouseEnter;
-            sidebar.MouseLeave += Sidebar_MouseLeave;
-
-            sidebarTimer = new System.Windows.Forms.Timer { Interval = 10 };
-            sidebarTimer.Tick += SidebarTimer_Tick;
-
-            lblTitle = new Label
-            {
-                Text = "🧳",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 14, FontStyle.Bold),
-                Dock = DockStyle.Top,
-                Height = 60,
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-
-            btnSearchTrips = CreateSidebarButton("🔍", "Search Trips", 70);
-            btnMyBookings = CreateSidebarButton("📅", "My Bookings", 120);
-            btnProfile = CreateSidebarButton("✏️", "Edit Profile", 170);
-
-            sidebar.Controls.AddRange(new Control[] { lblTitle, btnSearchTrips, btnMyBookings, btnProfile });
-            this.Controls.Add(contentPanel);
-            this.Controls.Add(sidebar);
-
-            btnSearchTrips.Click += btnSearchTrips_Click;
-            btnMyBookings.Click += btnMyBookings_Click;
-            btnProfile.Click += btnProfile_Click;
+            InitializeComponent();
         }
 
-        private Button CreateSidebarButton(string icon, string label, int top)
+        private void TravelerMainForm_Load(object sender, EventArgs e)
         {
-            var btn = new Button
-            {
-                Text = icon,
-                Tag = label,
-                Width = sidebarMinWidth - 10,
-                Height = 40,
-                Left = 5,
-                Top = top,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 10),
-                ForeColor = Color.White,
-                BackColor = Color.FromArgb(11, 57, 84),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-            btn.FlatAppearance.BorderSize = 0;
-            btn.MouseEnter += Sidebar_MouseEnter;
-            btn.MouseLeave += Sidebar_MouseLeave;
-            return btn;
+            // any startup logic
         }
 
         private void Sidebar_MouseEnter(object sender, EventArgs e)
@@ -124,14 +58,24 @@ namespace TravelEase.Forms
         private void UpdateSidebarText(bool expanded)
         {
             lblTitle.Text = expanded ? "🧳  Traveler" : "🧳";
-            lblTitle.TextAlign = expanded ? ContentAlignment.MiddleLeft : ContentAlignment.MiddleCenter;
+            lblTitle.TextAlign = expanded
+                ? System.Drawing.ContentAlignment.MiddleLeft
+                : System.Drawing.ContentAlignment.MiddleCenter;
+
             foreach (Control ctrl in sidebar.Controls)
             {
                 if (ctrl is Button btn && btn.Tag is string label)
                 {
-                    btn.Text = expanded ? btn.Text.Split(' ')[0] + "  " + label : btn.Text.Split(' ')[0];
-                    btn.TextAlign = expanded ? ContentAlignment.MiddleLeft : ContentAlignment.MiddleCenter;
-                    btn.Width = expanded ? sidebarMaxWidth - 10 : sidebarMinWidth - 10;
+                    var icon = btn.Text.Split(' ')[0];
+                    btn.Text = expanded
+                        ? $"{icon}  {label}"
+                        : icon;
+                    btn.TextAlign = expanded
+                        ? System.Drawing.ContentAlignment.MiddleLeft
+                        : System.Drawing.ContentAlignment.MiddleCenter;
+                    btn.Width = expanded
+                        ? sidebarMaxWidth - 10
+                        : sidebarMinWidth - 10;
                 }
             }
         }
@@ -150,24 +94,6 @@ namespace TravelEase.Forms
             var form = new MyBookingsForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // TravelerMainForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "TravelerMainForm";
-            this.Load += new System.EventHandler(this.TravelerMainForm_Load);
-            this.ResumeLayout(false);
-
-        }
-
-        private void TravelerMainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
