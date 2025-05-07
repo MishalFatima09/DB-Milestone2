@@ -64,16 +64,19 @@ namespace TravelEase.Forms
             // btnAddTrip
             // 
             this.btnAddTrip = CreateSidebarButton("➕", "Add Trip", 70);
+            this.btnAddTrip.Click += new System.EventHandler(this.BtnAddTrip_Click);
 
             // 
             // btnManageTrips
             // 
             this.btnManageTrips = CreateSidebarButton("📋", "Manage Trips", 120);
+            this.btnManageTrips.Click += new System.EventHandler(this.BtnManageTrips_Click);
 
             // 
             // btnAssignResources
             // 
             this.btnAssignResources = CreateSidebarButton("📦", "Assign Resources", 170);
+            this.btnAssignResources.Click += new System.EventHandler(this.BtnAssignResources_Click);
 
             // Add controls to sidebar
             this.sidebar.Controls.AddRange(new Control[] {
