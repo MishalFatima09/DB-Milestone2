@@ -13,7 +13,6 @@ namespace DB_M2_Chat
     public partial class EditTripForm : Form
     {
         private Trip trip;
-
         public EditTripForm(Trip selectedTrip)
         {
             InitializeComponent();
@@ -27,25 +26,27 @@ namespace DB_M2_Chat
             numCapacity.Value = trip.Capacity;
             cmbTripType.SelectedItem = trip.TripType;
             numAccessibility.Value = trip.AccessibilityScore;
-            numSustainability.Value = trip.SustainabilityScore;
+            numSustainability.Value = trip.Sustainability_Score;
             cmbCategory.SelectedItem = trip.TourCategory;
+
+
         }
 
-        //private void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    // Update the trip object with edited values
-        //    trip.Title = txtTitle.Text;
-        //    trip.Description = txtDescription.Text;
-        //    trip.Price = numPrice.Value;
-        //    trip.Duration = (int)numDuration.Value;
-        //    trip.Capacity = (int)numCapacity.Value;
-        //    trip.TripType = cmbTripType.SelectedItem?.ToString();
-        //    trip.AccessibilityScore = (int)numAccessibility.Value;
-        //    trip.SustainabilityScore = (int)numSustainability.Value;
-        //    trip.TourCategory = cmbCategory.SelectedItem?.ToString();
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Update the trip object with edited values
+            trip.Title = txtTitle.Text;
+            trip.Description = txtDescription.Text;
+            trip.Price = numPrice.Value;
+            trip.Duration = (int)numDuration.Value;
+            trip.Capacity = (int)numCapacity.Value;
+            trip.TripType = cmbTripType.SelectedItem?.ToString();
+            trip.AccessibilityScore = (int)numAccessibility.Value;
+            trip.Sustainability_Score = (int)numSustainability.Value;
+            trip.TourCategory = cmbCategory.SelectedItem?.ToString();
 
-        //    this.DialogResult = DialogResult.OK;
-        //    this.Close();
-        //}
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

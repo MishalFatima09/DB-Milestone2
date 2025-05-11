@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using DB_M2_Chat;
@@ -17,7 +18,7 @@ namespace TravelEase.Forms
         public int Capacity { get; set; }
         public string TripType { get; set; }
         public int AccessibilityScore { get; set; }
-        public int SustainabilityScore { get; set; }
+        public int Sustainability_Score { get; set; }
         public string TourCategory { get; set; }
     }
 
@@ -27,6 +28,7 @@ namespace TravelEase.Forms
         public ManageTripsForm()
         {
             InitializeComponent();
+            LoadTrips();
         }
 
         private void ManageTripsForm_Load(object sender, EventArgs e)
@@ -39,25 +41,61 @@ namespace TravelEase.Forms
 
         }
 
-        private List<Trip> trips = new List<Trip>
+        private List<Trip> GetTripsFromDatabase(string filter = "")
         {
-            new Trip { Title = "Desert Safari", Price = 150, Duration = 2 },
-            new Trip { Title = "City Tour", Price = 80, Duration = 1 }
-        };
+            var result = new List<Trip>();
+
+            using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
+            {
+                conn.Open();
+                string query = "SELECT Title, Description, Price, Duration, Capacity, TripType, AccessibilityScore, Sustainability_Score, TourCategory FROM Trip";
+
+                if (!string.IsNullOrWhiteSpace(filter))
+                {
+                    query += " WHERE Title LIKE @filter";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    if (!string.IsNullOrWhiteSpace(filter))
+                        cmd.Parameters.AddWithValue("@filter", "%" + filter + "%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Trip
+                            {
+                                Title = reader["Title"].ToString(),
+                                Description = reader["Description"].ToString(),
+                                Price = Convert.ToDecimal(reader["Price"]),
+                                Duration = Convert.ToInt32(reader["Duration"]),
+                                Capacity = Convert.ToInt32(reader["Capacity"]),
+                                TripType = reader["TripType"].ToString(),
+                                AccessibilityScore = Convert.ToInt32(reader["AccessibilityScore"]),
+                                Sustainability_Score = Convert.ToInt32(reader["Sustainability_Score"]),
+                                TourCategory = reader["TourCategory"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
 
 
         private void LoadTrips(string filter = "")
         {
-            var filtered = string.IsNullOrWhiteSpace(filter)
-                ? trips
-                : trips.Where(t => t.Title.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            var trips = GetTripsFromDatabase(filter);
 
             dgvTrips.DataSource = null;
-            dgvTrips.DataSource = filtered;
+            dgvTrips.DataSource = trips;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             LoadTrips(txtSearch.Text);
         }
 
@@ -66,6 +104,22 @@ namespace TravelEase.Forms
             txtSearch.Text = "";
             LoadTrips();
         }
+
+        private void DeleteTripFromDatabase(string title)
+        {
+            using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
+            {
+                conn.Open();
+                string query = "DELETE FROM Trip WHERE Title = @title"; // Ideally use TripID instead
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@title", title); // Or use TripID
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         private void dgvTrips_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -88,7 +142,7 @@ namespace TravelEase.Forms
                     var result = MessageBox.Show("Are you sure you want to delete this trip?", "Confirm", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        trips.Remove(selectedTrip);
+                        DeleteTripFromDatabase(selectedTrip.Title); // Better to use TripID
                         LoadTrips();
                     }
                 }

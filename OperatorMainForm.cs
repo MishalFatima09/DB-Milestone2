@@ -7,9 +7,11 @@ namespace TravelEase.Forms
 {
     public partial class OperatorMainForm : Form
     {
-        public OperatorMainForm()
+        private string currentOperatorID;
+        public OperatorMainForm(string operatorID)
         {
             InitializeComponent();
+            currentOperatorID = operatorID;
         }
 
         private void OperatorMainForm_Load(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace TravelEase.Forms
            // try {
 
                 contentPanel.Controls.Clear();
-                var form = new AddTripForm { TopLevel = false, Dock = DockStyle.Fill };
+                var form = new AddTripForm(currentOperatorID) { TopLevel = false, Dock = DockStyle.Fill };
                 contentPanel.Controls.Add(form);
                 form.Show();
             //}  

@@ -70,19 +70,5 @@ namespace TravelEase.Forms
 
         }
 
-        //private void dgvTrips_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void btnRefresh_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void btnSearch_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

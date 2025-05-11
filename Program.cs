@@ -6,6 +6,8 @@ namespace TravelEase
 {
     static class Program
     {
+        private static string operatorID;
+
         [STAThread]
         static void Main()
         {
@@ -24,7 +26,7 @@ namespace TravelEase
             }
             else if (role == "Operator")
             {
-                roleForm = new OperatorMainForm();
+                roleForm = new OperatorMainForm(operatorID);
             }
             else if (role == "Traveler")
             {
