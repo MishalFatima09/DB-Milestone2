@@ -1,5 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using DB_M2_Chat.Properties;
+
 
 namespace TravelEase.Forms
 {
@@ -43,6 +45,21 @@ namespace TravelEase.Forms
             // 
             this.contentPanel.Dock = DockStyle.Fill;
             this.contentPanel.BackColor = Color.FromArgb(191, 215, 234);
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Image = DB_M2_Chat.Properties.Resources.logo; 
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.Size = new Size(300, 300);
+            pictureBox.Location = new Point(
+                (this.contentPanel.Width - pictureBox.Width) / 2,
+                (this.contentPanel.Height - pictureBox.Height) / 2
+            );
+            pictureBox.Anchor = AnchorStyles.None;
+
+            this.contentPanel.Controls.Add(pictureBox);
+
+
+
 
             // 
             // sidebarTimer

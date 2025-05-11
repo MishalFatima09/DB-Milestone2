@@ -1,62 +1,88 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TravelEase.Forms
 {
     partial class ManageTripsForm
     {
-        private Label lbl;
-        private DataGridView dgv;
+        private DataGridView dgvTrips;
+        private TextBox txtSearch;
+        private Button btnSearch, btnRefresh;
+
 
         private void InitializeComponent()
         {
-            this.lbl = new System.Windows.Forms.Label();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dgvTrips = new DataGridView();
+            this.txtSearch = new TextBox();
+            this.btnSearch = new Button();
+            this.btnRefresh = new Button();
 
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.SuspendLayout();
+            // Search TextBox
+            this.txtSearch.Location = new Point(20, 20);
+            this.txtSearch.Size = new Size(200, 25);
 
-            // 
-            // ManageTripsForm
-            // 
-            this.BackColor = Color.FromArgb(191, 215, 234);
-            this.ClientSize = new System.Drawing.Size(900, 400);
-            this.Name = "ManageTripsForm";
-            this.Load += new System.EventHandler(this.ManageTripsForm_Load);
+            // Search Button
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Location = new Point(230, 20);
+            this.btnSearch.Size = new Size(75, 25);
+            this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
 
-            // 
-            // lbl
-            // 
-            this.lbl.Text = "📋 Manage Trips";
-            this.lbl.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            this.lbl.ForeColor = Color.FromArgb(11, 57, 84);
-            this.lbl.Location = new Point(30, 20);
-            this.lbl.AutoSize = true;
+            // Refresh Button
+            this.btnRefresh.Text = "🔄 Refresh";
+            this.btnRefresh.Location = new Point(320, 20);
+            this.btnRefresh.Size = new Size(80, 25);
+            this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
 
-            // 
-            // dgv
-            // 
-            this.dgv.Location = new Point(30, 60);
-            this.dgv.Size = new Size(800, 300);
-            this.dgv.ReadOnly = true;
-            this.dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.Columns.Add("TripName", "Trip Name");
-            this.dgv.Columns.Add("Destination", "Destination");
-            this.dgv.Columns.Add("Price", "Price");
-            this.dgv.Columns.Add("Capacity", "Capacity");
+            // DataGridView
+            this.dgvTrips.Location = new Point(20, 60);
+            this.dgvTrips.Size = new Size(900, 400);
+            this.dgvTrips.AutoGenerateColumns = false;
+            this.dgvTrips.AllowUserToAddRows = false;
 
-            this.dgv.Rows.Add("Safari Adventure", "Kenya", "$1800", "15");
-            this.dgv.Rows.Add("Ski Resort", "Switzerland", "$3000", "10");
+            // Columns
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Title", DataPropertyName = "Title" });
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Price", DataPropertyName = "Price" });
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Duration", DataPropertyName = "Duration" });
 
-            // 
-            // Controls
-            // 
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.dgv);
+            // Edit Button
+            var editCol = new DataGridViewButtonColumn();
+            editCol.HeaderText = "";
+            editCol.Text = "Edit";
+            editCol.UseColumnTextForButtonValue = true;
+            dgvTrips.Columns.Add(editCol);
 
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // Delete Button
+            var deleteCol = new DataGridViewButtonColumn();
+            deleteCol.HeaderText = "";
+            deleteCol.Text = "Delete";
+            deleteCol.UseColumnTextForButtonValue = true;
+            dgvTrips.Columns.Add(deleteCol);
+
+            // Event
+            this.dgvTrips.CellClick += new DataGridViewCellEventHandler(this.dgvTrips_CellClick);
+
+            // Add to form
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.dgvTrips);
+
         }
+
+        //private void dgvTrips_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //private void btnRefresh_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
