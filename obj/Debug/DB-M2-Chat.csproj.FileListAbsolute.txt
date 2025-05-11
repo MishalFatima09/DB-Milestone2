@@ -29,7 +29,6 @@ C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.exe.config
 C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.exe
 C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.pdb
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB-M2-Chat.csproj.AssemblyReference.cache
-C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\TravelEase.Forms.AddServiceForm.resources
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\TravelEase.Forms.AddTripForm.resources
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\TravelEase.Forms.AdminMainForm.resources
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\TravelEase.Forms.AnalyticsForm.resources
@@ -52,3 +51,4 @@ C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB-M2-Chat.csproj.GenerateRe
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB-M2-Chat.csproj.CoreCompileInputs.cache
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB-M2-Chat.exe
 C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB-M2-Chat.pdb
+C:\Users\aleen\source\repos\DB-Milestone2\obj\Debug\DB_M2_Chat.AddServiceForm.resources
