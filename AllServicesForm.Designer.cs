@@ -191,17 +191,17 @@ namespace DB_M2_Chat
             this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
 
             // View Details Button
-            this.btnViewDetails = new Button
-            {
-                Text = "View Details",
-                BackColor = Color.FromArgb(40, 120, 180),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Location = new Point(230, 12),
-                Size = new Size(120, 35)
-            };
-            this.btnViewDetails.FlatAppearance.BorderSize = 0;
-            this.btnViewDetails.Click += new EventHandler(this.btnViewDetails_Click);
+            //this.btnViewDetails = new Button
+            //{
+            //    Text = "View Details",
+            //    BackColor = Color.FromArgb(40, 120, 180),
+            //    ForeColor = Color.White,
+            //    FlatStyle = FlatStyle.Flat,
+            //    Location = new Point(230, 12),
+            //    Size = new Size(120, 35)
+            //};
+            //this.btnViewDetails.FlatAppearance.BorderSize = 0;
+            //.btnViewDetails.Click += new EventHandler(this.btnViewDetails_Click);
 
             // Add buttons to actions panel
             this.panelActions.Controls.AddRange(new Control[]
@@ -230,3 +230,212 @@ namespace DB_M2_Chat
         }
     }
 }
+
+
+
+
+//namespace DB_M2_Chat
+//{
+//    partial class AllServicesForm
+//    {
+//        /// <summary>
+//        /// Required designer variable.
+//        /// </summary>
+//        private System.ComponentModel.IContainer components = null;
+
+//        /// <summary>
+//        /// Clean up any resources being used.
+//        /// </summary>
+//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+//        protected override void Dispose(bool disposing)
+//        {
+//            if (disposing && (components != null))
+//            {
+//                components.Dispose();
+//            }
+//            base.Dispose(disposing);
+//        }
+
+//        #region Windows Form Designer generated code
+
+//        /// <summary>
+//        /// Required method for Designer support - do not modify
+//        /// the contents of this method with the code editor.
+//        /// </summary>
+//        private void InitializeComponent()
+//        {
+//            this.lblTitle = new System.Windows.Forms.Label();
+//            this.dgvServices = new System.Windows.Forms.DataGridView();
+//            this.txtSearch = new System.Windows.Forms.TextBox();
+//            this.btnSearch = new System.Windows.Forms.Button();
+//            this.cmbCategory = new System.Windows.Forms.ComboBox();
+//            this.lblCategory = new System.Windows.Forms.Label();
+//            this.btnAdd = new System.Windows.Forms.Button();
+//            this.btnEdit = new System.Windows.Forms.Button();
+//            this.btnDelete = new System.Windows.Forms.Button();
+//            this.lblServicesCount = new System.Windows.Forms.Label();
+//            this.btnLogout = new System.Windows.Forms.Button();
+//            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
+//            this.SuspendLayout();
+//            // 
+//            // lblTitle
+//            // 
+//            this.lblTitle.AutoSize = true;
+//            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+//            this.lblTitle.Name = "lblTitle";
+//            this.lblTitle.Size = new System.Drawing.Size(225, 29);
+//            this.lblTitle.TabIndex = 0;
+//            this.lblTitle.Text = "Available Services";
+//            // 
+//            // dgvServices
+//            // 
+//            this.dgvServices.AllowUserToAddRows = false;
+//            this.dgvServices.AllowUserToDeleteRows = false;
+//            this.dgvServices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+//            | System.Windows.Forms.AnchorStyles.Left)
+//            | System.Windows.Forms.AnchorStyles.Right)));
+//            this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+//            this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+//            this.dgvServices.Location = new System.Drawing.Point(12, 100);
+//            this.dgvServices.MultiSelect = false;
+//            this.dgvServices.Name = "dgvServices";
+//            this.dgvServices.ReadOnly = true;
+//            this.dgvServices.RowHeadersWidth = 51;
+//            this.dgvServices.RowTemplate.Height = 24;
+//            this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+//            this.dgvServices.Size = new System.Drawing.Size(950, 360);
+//            this.dgvServices.TabIndex = 1;
+//            // 
+//            // txtSearch
+//            // 
+//            this.txtSearch.Location = new System.Drawing.Point(12, 52);
+//            this.txtSearch.Name = "txtSearch";
+//            this.txtSearch.Size = new System.Drawing.Size(230, 22);
+//            this.txtSearch.TabIndex = 2;
+//            //this.txtSearch.PlaceholderText = "Search for services...";
+//            // 
+//            // btnSearch
+//            // 
+//            this.btnSearch.Location = new System.Drawing.Point(248, 51);
+//            this.btnSearch.Name = "btnSearch";
+//            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+//            this.btnSearch.TabIndex = 3;
+//            this.btnSearch.Text = "Search";
+//            this.btnSearch.UseVisualStyleBackColor = true;
+//            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+//            // 
+//            // cmbCategory
+//            // 
+//            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+//            this.cmbCategory.FormattingEnabled = true;
+//            this.cmbCategory.Location = new System.Drawing.Point(405, 52);
+//            this.cmbCategory.Name = "cmbCategory";
+//            this.cmbCategory.Size = new System.Drawing.Size(177, 24);
+//            this.cmbCategory.TabIndex = 4;
+//            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+//            // 
+//            // lblCategory
+//            // 
+//            this.lblCategory.AutoSize = true;
+//            this.lblCategory.Location = new System.Drawing.Point(340, 55);
+//            this.lblCategory.Name = "lblCategory";
+//            this.lblCategory.Size = new System.Drawing.Size(65, 16);
+//            this.lblCategory.TabIndex = 5;
+//            this.lblCategory.Text = "Category:";
+//            // 
+//            // btnAdd
+//            // 
+//            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+//            this.btnAdd.Location = new System.Drawing.Point(12, 475);
+//            this.btnAdd.Name = "btnAdd";
+//            this.btnAdd.Size = new System.Drawing.Size(120, 35);
+//            this.btnAdd.TabIndex = 6;
+//            this.btnAdd.Text = "Add Service";
+//            this.btnAdd.UseVisualStyleBackColor = true;
+//            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+//            // 
+//            // btnEdit
+//            // 
+//            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+//            this.btnEdit.Location = new System.Drawing.Point(138, 475);
+//            this.btnEdit.Name = "btnEdit";
+//            this.btnEdit.Size = new System.Drawing.Size(120, 35);
+//            this.btnEdit.TabIndex = 7;
+//            this.btnEdit.Text = "Edit Service";
+//            this.btnEdit.UseVisualStyleBackColor = true;
+//            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+//            // 
+//            // btnDelete
+//            // 
+//            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+//            this.btnDelete.Location = new System.Drawing.Point(264, 475);
+//            this.btnDelete.Name = "btnDelete";
+//            this.btnDelete.Size = new System.Drawing.Size(120, 35);
+//            this.btnDelete.TabIndex = 8;
+//            this.btnDelete.Text = "Delete Service";
+//            this.btnDelete.UseVisualStyleBackColor = true;
+//            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+//            // 
+//            // lblServicesCount
+//            // 
+//            this.lblServicesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+//            this.lblServicesCount.AutoSize = true;
+//            this.lblServicesCount.Location = new System.Drawing.Point(850, 484);
+//            this.lblServicesCount.Name = "lblServicesCount";
+//            this.lblServicesCount.Size = new System.Drawing.Size(109, 16);
+//            this.lblServicesCount.TabIndex = 9;
+//            this.lblServicesCount.Text = "Total Services: 0";
+//            // 
+//            // btnLogout
+//            // 
+//            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+//            this.btnLogout.Location = new System.Drawing.Point(874, 12);
+//            this.btnLogout.Name = "btnLogout";
+//            this.btnLogout.Size = new System.Drawing.Size(88, 28);
+//            this.btnLogout.TabIndex = 10;
+//            this.btnLogout.Text = "Logout";
+//            this.btnLogout.UseVisualStyleBackColor = true;
+//            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+//            // 
+//            // AllServicesForm
+//            // 
+//            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+//            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+//            this.ClientSize = new System.Drawing.Size(974, 522);
+//            this.Controls.Add(this.btnLogout);
+//            this.Controls.Add(this.lblServicesCount);
+//            this.Controls.Add(this.btnDelete);
+//            this.Controls.Add(this.btnEdit);
+//            this.Controls.Add(this.btnAdd);
+//            this.Controls.Add(this.lblCategory);
+//            this.Controls.Add(this.cmbCategory);
+//            this.Controls.Add(this.btnSearch);
+//            this.Controls.Add(this.txtSearch);
+//            this.Controls.Add(this.dgvServices);
+//            this.Controls.Add(this.lblTitle);
+//            this.MinimumSize = new System.Drawing.Size(800, 500);
+//            this.Name = "AllServicesForm";
+//            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+//            this.Text = "Services";
+//            this.Load += new System.EventHandler(this.AllServicesForm_Load);
+//            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).EndInit();
+//            this.ResumeLayout(false);
+//            this.PerformLayout();
+//        }
+
+//        #endregion
+
+//        private System.Windows.Forms.Label lblTitle;
+//        private System.Windows.Forms.DataGridView dgvServices;
+//        private System.Windows.Forms.TextBox txtSearch;
+//        private System.Windows.Forms.Button btnSearch;
+//        private System.Windows.Forms.ComboBox cmbCategory;
+//        private System.Windows.Forms.Label lblCategory;
+//        private System.Windows.Forms.Button btnAdd;
+//        private System.Windows.Forms.Button btnEdit;
+//        private System.Windows.Forms.Button btnDelete;
+//        private System.Windows.Forms.Label lblServicesCount;
+//        private System.Windows.Forms.Button btnLogout;
+//    }
+//}
