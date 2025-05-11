@@ -16,6 +16,8 @@ namespace DB_M2_Chat
 {
     public partial class AllServicesForm : Form
     {
+
+       // public string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
         public AllServicesForm()
         {
             InitializeComponent();
@@ -31,55 +33,53 @@ namespace DB_M2_Chat
         private void PopulateServicesGrid()
         {
             //// Clear existing items
-            dgvServices.Rows.Clear();
-
-            // Add sample data
-            dgvServices.Rows.Add("S001", "Luxury Suite", "Hotel", "$250", "Available", "4.8");
-            dgvServices.Rows.Add("S002", "City Tour", "Tour", "$45", "Available", "4.5");
-            dgvServices.Rows.Add("S003", "Airport Shuttle", "Transport", "$30", "Limited", "4.3");
-            dgvServices.Rows.Add("S004", "Adventure Package", "Package", "$399", "Available", "4.7");
-            dgvServices.Rows.Add("S005", "Standard Room", "Hotel", "$120", "Limited", "4.2");
-            dgvServices.Rows.Add("S006", "Beachfront Villa", "Hotel", "$400", "Available", "4.9");
-            dgvServices.Rows.Add("S007", "Wine Tasting Tour", "Tour", "$75", "Limited", "4.6");
-
-            //// Clear existing rows
             //dgvServices.Rows.Clear();
 
-            //// Get the connection string from App.config
-            //string connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            //// Add sample data
+            //dgvServices.Rows.Add("S001", "Luxury Suite", "Hotel", "$250", "Available", "4.8");
+            //dgvServices.Rows.Add("S002", "City Tour", "Tour", "$45", "Available", "4.5");
+            //dgvServices.Rows.Add("S003", "Airport Shuttle", "Transport", "$30", "Limited", "4.3");
+            //dgvServices.Rows.Add("S004", "Adventure Package", "Package", "$399", "Available", "4.7");
+            //dgvServices.Rows.Add("S005", "Standard Room", "Hotel", "$120", "Limited", "4.2");
+            //dgvServices.Rows.Add("S006", "Beachfront Villa", "Hotel", "$400", "Available", "4.9");
+            //dgvServices.Rows.Add("S007", "Wine Tasting Tour", "Tour", "$75", "Limited", "4.6");
 
-            //// SQL query to fetch data
-            //string query = "SELECT ID, ServiceName, Category, Price, Availability, Rating FROM Services";
+            //// Clear existing rows
+            dgvServices.Rows.Clear();
 
-            //try
-            //{
-            //    using (SqlConnection connection = new SqlConnection(connectionString))
-            //    {
-            //        connection.Open();
+            // Get the connection string from App.config
+            string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
-            //        using (SqlCommand command = new SqlCommand(query, connection))
-            //        {
-            //            using (SqlDataReader reader = command.ExecuteReader())
-            //            {
-            //                while (reader.Read())
-            //                {
-            //                    dgvServices.Rows.Add(
-            //                        reader["ID"].ToString(),
-            //                        reader["ServiceName"].ToString(),
-            //                        reader["Category"].ToString(),
-            //                        $"${reader["Price"]:0.00}",
-            //                        reader["Availability"].ToString(),
-            //                        reader["Rating"].ToString()
-            //                    );
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            // SQL query to fetch data
+            string query = "SELECT ServiceID, ProviderID, Type, Name FROM Services ";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                dgvServices.Rows.Add(
+                                    reader["ServiceID"].ToString(),
+                                    reader["ProviderID"].ToString(),
+                                    reader["Type"].ToString(),
+                                    reader["Name"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
