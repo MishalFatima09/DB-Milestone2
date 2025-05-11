@@ -77,12 +77,18 @@ namespace TravelEase.Forms
 
         private void BtnAddTrip_Click(object sender, EventArgs e)
         {
-            contentPanel.Controls.Clear();
-            var form = new AddTripForm { TopLevel = false, Dock = DockStyle.Fill };
-            contentPanel.Controls.Add(form);
-            form.Show();
-        }
+           // try {
 
+                contentPanel.Controls.Clear();
+                var form = new AddTripForm { TopLevel = false, Dock = DockStyle.Fill };
+                contentPanel.Controls.Add(form);
+                form.Show();
+            //}  
+            // catch (Exception ex)
+            // {
+            //     MessageBox.Show($"An error accurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // }
+        }
         private void BtnManageTrips_Click(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();

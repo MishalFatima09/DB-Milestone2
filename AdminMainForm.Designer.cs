@@ -19,8 +19,13 @@ namespace TravelEase.Forms
             this.sidebarTimer = new Timer();
             this.lblTitle = new Label();
             this.btnUserMgmt = CreateSidebarButton("👤", "User Management", 70);
+            this.btnUserMgmt.Click += new System.EventHandler(this.btnUserMgmt_Click);
+
             this.btnCategoryMgmt = CreateSidebarButton("🗂️", "Categories", 120);
+            this.btnCategoryMgmt.Click += new System.EventHandler(this.btnCategoryMgmt_Click);
+
             this.btnAnalytics = CreateSidebarButton("📊", "Analytics", 170);
+            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
 
             // 
             // AdminMainForm

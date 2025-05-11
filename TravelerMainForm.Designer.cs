@@ -53,8 +53,13 @@ namespace TravelEase.Forms
 
             // Sidebar buttons
             btnSearchTrips = CreateSidebarButton("🔍", "Search Trips", 70);
+            this.btnSearchTrips.Click += new EventHandler(this.btnSearchTrips_Click);
+
             btnMyBookings = CreateSidebarButton("📅", "My Bookings", 120);
+            this.btnMyBookings.Click += new EventHandler(this.btnMyBookings_Click);
+
             btnProfile = CreateSidebarButton("✏️", "Edit Profile", 170);
+            this.btnProfile.Click += new EventHandler(this.btnProfile_Click);
 
             // Assemble sidebar
             sidebar.Controls.AddRange(new Control[] {

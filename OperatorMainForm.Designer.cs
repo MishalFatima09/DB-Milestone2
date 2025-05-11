@@ -1,5 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using DB_M2_Chat.Properties;
+
 
 namespace TravelEase.Forms
 {
@@ -44,9 +46,6 @@ namespace TravelEase.Forms
             this.contentPanel.Dock = DockStyle.Fill;
             this.contentPanel.BackColor = Color.FromArgb(191, 215, 234);
 
-            //
-            // Picture
-            //
             PictureBox pictureBox = new PictureBox();
             pictureBox.Image = DB_M2_Chat.Properties.Resources.logo; 
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -58,6 +57,9 @@ namespace TravelEase.Forms
             pictureBox.Anchor = AnchorStyles.None;
 
             this.contentPanel.Controls.Add(pictureBox);
+
+
+
 
             // 
             // sidebarTimer
@@ -79,16 +81,19 @@ namespace TravelEase.Forms
             // btnAddTrip
             // 
             this.btnAddTrip = CreateSidebarButton("➕", "Add Trip", 70);
+            this.btnAddTrip.Click += new System.EventHandler(this.BtnAddTrip_Click);
 
             // 
             // btnManageTrips
             // 
             this.btnManageTrips = CreateSidebarButton("📋", "Manage Trips", 120);
+            this.btnManageTrips.Click += new System.EventHandler(this.BtnManageTrips_Click);
 
             // 
             // btnAssignResources
             // 
             this.btnAssignResources = CreateSidebarButton("📦", "Assign Resources", 170);
+            this.btnAssignResources.Click += new System.EventHandler(this.BtnAssignResources_Click);
 
             // Add controls to sidebar
             this.sidebar.Controls.AddRange(new Control[] {

@@ -53,8 +53,13 @@ namespace TravelEase.Forms
 
             // sidebar buttons
             btnMyServices = CreateSidebarButton("🏷️", "My Services", 70);
+            this.btnMyServices.Click += new System.EventHandler(this.btnMyServices_Click);
+
             btnAddService = CreateSidebarButton("➕", "Add Service", 120);
+            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
+
             btnBookingRequests = CreateSidebarButton("📩", "Booking Requests", 170);
+            this.btnBookingRequests.Click += new System.EventHandler(this.btnBookingRequests_Click);
 
             // assemble sidebar
             sidebar.Controls.AddRange(new Control[]
