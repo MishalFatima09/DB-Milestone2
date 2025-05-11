@@ -59,8 +59,6 @@ namespace TravelEase.Forms
             this.contentPanel.Controls.Add(pictureBox);
 
 
-
-
             // 
             // sidebarTimer
             // 
