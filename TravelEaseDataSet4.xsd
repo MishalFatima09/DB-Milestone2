@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TravelEaseDataSet4" targetNamespace="http://tempuri.org/TravelEaseDataSet4.xsd" xmlns:mstns="http://tempuri.org/TravelEaseDataSet4.xsd" xmlns="http://tempuri.org/TravelEaseDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransportOnTimeTableAdapter" GeneratorDataComponentClassName="TransportOnTimeTableAdapter" Name="TransportOnTime" UserDataComponentName="TransportOnTimeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.TransportOnTime" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TransportID, TransportName, VehicleType, TotalTrips, OnTimeDepartures, OnTimeArrivals, DeparturePunctualityRate, ArrivalPunctualityRate FROM dbo.TransportOnTime</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TransportID" DataSetColumn="TransportID" />
+              <Mapping SourceColumn="TransportName" DataSetColumn="TransportName" />
+              <Mapping SourceColumn="VehicleType" DataSetColumn="VehicleType" />
+              <Mapping SourceColumn="TotalTrips" DataSetColumn="TotalTrips" />
+              <Mapping SourceColumn="OnTimeDepartures" DataSetColumn="OnTimeDepartures" />
+              <Mapping SourceColumn="OnTimeArrivals" DataSetColumn="OnTimeArrivals" />
+              <Mapping SourceColumn="DeparturePunctualityRate" DataSetColumn="DeparturePunctualityRate" />
+              <Mapping SourceColumn="ArrivalPunctualityRate" DataSetColumn="ArrivalPunctualityRate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TravelEaseDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TravelEaseDataSet4" msprop:Generator_DataSetName="TravelEaseDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TransportOnTime" msprop:Generator_RowEvHandlerName="TransportOnTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="TransportOnTimeRowDeleted" msprop:Generator_RowDeletingName="TransportOnTimeRowDeleting" msprop:Generator_RowEvArgName="TransportOnTimeRowChangeEvent" msprop:Generator_TablePropName="TransportOnTime" msprop:Generator_RowChangedName="TransportOnTimeRowChanged" msprop:Generator_RowChangingName="TransportOnTimeRowChanging" msprop:Generator_TableClassName="TransportOnTimeDataTable" msprop:Generator_RowClassName="TransportOnTimeRow" msprop:Generator_TableVarName="tableTransportOnTime" msprop:Generator_UserTableName="TransportOnTime">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransportID" msprop:Generator_ColumnPropNameInRow="TransportID" msprop:Generator_ColumnPropNameInTable="TransportIDColumn" msprop:Generator_ColumnVarNameInTable="columnTransportID" msprop:Generator_UserColumnName="TransportID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportName" msprop:Generator_ColumnPropNameInRow="TransportName" msprop:Generator_ColumnPropNameInTable="TransportNameColumn" msprop:Generator_ColumnVarNameInTable="columnTransportName" msprop:Generator_UserColumnName="TransportName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleType" msprop:Generator_ColumnPropNameInRow="VehicleType" msprop:Generator_ColumnPropNameInTable="VehicleTypeColumn" msprop:Generator_ColumnVarNameInTable="columnVehicleType" msprop:Generator_UserColumnName="VehicleType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalTrips" msprop:Generator_ColumnPropNameInRow="TotalTrips" msprop:Generator_ColumnPropNameInTable="TotalTripsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalTrips" msprop:Generator_UserColumnName="TotalTrips" type="xs:int" minOccurs="0" />
+              <xs:element name="OnTimeDepartures" msprop:Generator_ColumnPropNameInRow="OnTimeDepartures" msprop:Generator_ColumnPropNameInTable="OnTimeDeparturesColumn" msprop:Generator_ColumnVarNameInTable="columnOnTimeDepartures" msprop:Generator_UserColumnName="OnTimeDepartures" type="xs:int" minOccurs="0" />
+              <xs:element name="OnTimeArrivals" msprop:Generator_ColumnPropNameInRow="OnTimeArrivals" msprop:Generator_ColumnPropNameInTable="OnTimeArrivalsColumn" msprop:Generator_ColumnVarNameInTable="columnOnTimeArrivals" msprop:Generator_UserColumnName="OnTimeArrivals" type="xs:int" minOccurs="0" />
+              <xs:element name="DeparturePunctualityRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="DeparturePunctualityRate" msprop:Generator_ColumnPropNameInTable="DeparturePunctualityRateColumn" msprop:Generator_ColumnVarNameInTable="columnDeparturePunctualityRate" msprop:Generator_UserColumnName="DeparturePunctualityRate" type="xs:double" minOccurs="0" />
+              <xs:element name="ArrivalPunctualityRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ArrivalPunctualityRate" msprop:Generator_ColumnPropNameInTable="ArrivalPunctualityRateColumn" msprop:Generator_ColumnVarNameInTable="columnArrivalPunctualityRate" msprop:Generator_UserColumnName="ArrivalPunctualityRate" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TransportOnTime" />
+      <xs:field xpath="mstns:TransportID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

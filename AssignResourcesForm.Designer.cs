@@ -7,6 +7,7 @@ namespace TravelEase.Forms
     {
         private Label lbl;
         private DataGridView dgv;
+        private Label lblType;
 
         //private void InitializeComponent()
         //{
