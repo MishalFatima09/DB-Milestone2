@@ -106,6 +106,12 @@
     <Compile Include="LoginForm_Updated.Designer.cs">
       <DependentUpon>LoginForm_Updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBooking.Designer.cs">
+      <DependentUpon>ManageBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageTripsForm.cs" />
     <Compile Include="ManageTripsForm.Designer.cs">
       <DependentUpon>ManageTripsForm.cs</DependentUpon>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="UserManagementForm.Designer.cs">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAssignedServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAssignedServicesForm.Designer.cs">
+      <DependentUpon>ViewAssignedServicesForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddServiceForm.resx">
       <DependentUpon>AddServiceForm.cs</DependentUpon>
@@ -224,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagementForm.resx">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAssignedServicesForm.resx">
+      <DependentUpon>ViewAssignedServicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

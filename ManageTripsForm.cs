@@ -11,6 +11,7 @@ namespace TravelEase.Forms
     //remove later!!!!!!!!!!!!!!!
     public class Trip
     {
+        public string TripID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -48,8 +49,9 @@ namespace TravelEase.Forms
             using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
             {
                 conn.Open();
-                string query = "SELECT Title, Description, Price, Duration, Capacity, TripType, AccessibilityScore, Sustainability_Score, TourCategory FROM Trip";
-
+                string query = @"SELECT TripID, Title, Description, Price, Duration, Capacity,
+                        TripType, AccessibilityScore, Sustainability_Score, TourCategory
+                 FROM Trip";
                 if (!string.IsNullOrWhiteSpace(filter))
                 {
                     query += " WHERE Title LIKE @filter";
@@ -66,6 +68,7 @@ namespace TravelEase.Forms
                         {
                             result.Add(new Trip
                             {
+                                TripID = reader["TripID"].ToString(),
                                 Title = reader["Title"].ToString(),
                                 Description = reader["Description"].ToString(),
                                 Price = Convert.ToDecimal(reader["Price"]),
@@ -105,35 +108,40 @@ namespace TravelEase.Forms
             LoadTrips();
         }
 
-        private void DeleteTripFromDatabase(string title)
+
+        private void DeleteTripFromDatabase(string tripId)
         {
             using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
             {
                 conn.Open();
-                string query = "DELETE FROM Trip WHERE Title = @title"; // Ideally use TripID instead
+                string query = "DELETE FROM Trip WHERE TripID = @TripID";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@title", title); // Or use TripID
+                    cmd.Parameters.AddWithValue("@TripID", tripId);
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-
         private void dgvTrips_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                var selectedTrip = (Trip)dgvTrips.Rows[e.RowIndex].DataBoundItem;
+                var row = dgvTrips.Rows[e.RowIndex];
+                var selectedTrip = row.DataBoundItem as Trip;
+
+                if (selectedTrip == null)
+                {
+                    // This avoids crash when you click a button row with no data
+                    return;
+                }
 
                 if (e.ColumnIndex == dgvTrips.Columns["Edit"].Index)
                 {
-                    // Open edit form (pass the trip)
                     var editForm = new EditTripForm(selectedTrip);
                     if (editForm.ShowDialog() == DialogResult.OK)
                     {
-                        // Refresh after editing
                         LoadTrips();
                     }
                 }
@@ -142,12 +150,13 @@ namespace TravelEase.Forms
                     var result = MessageBox.Show("Are you sure you want to delete this trip?", "Confirm", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        DeleteTripFromDatabase(selectedTrip.Title); // Better to use TripID
+                        DeleteTripFromDatabase(selectedTrip.TripID); // ensure you added TripID
                         LoadTrips();
                     }
                 }
             }
         }
+
 
     }
 }
