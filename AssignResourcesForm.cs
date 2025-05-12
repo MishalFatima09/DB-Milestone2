@@ -24,54 +24,125 @@ namespace TravelEase.Forms
 
         private void InitializeComponent()
         {
-            this.Text = "Assign Resources to Booking";
-            this.Size = new System.Drawing.Size(500, 400);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = System.Drawing.Color.FromArgb(191, 215, 234);
-
-            // Labels
-            lblBooking = new Label() { Text = "Select Booking:", Location = new Point(30, 30), AutoSize = true };
-            Label lblType = new Label() { Text = "Service Type:", Location = new Point(30, 80), AutoSize = true };
-            lblService = new Label() { Text = "Select Service:", Location = new Point(30, 130), AutoSize = true };
-            lblStatus = new Label() { Text = "Select Status:", Location = new Point(30, 180), AutoSize = true };
-
-            // ComboBoxes
-            cmbBooking = new ComboBox() { Location = new Point(150, 30), Width = 250, DropDownStyle = ComboBoxStyle.DropDownList };
-            cmbServiceType = new ComboBox() { Location = new Point(150, 80), Width = 250, DropDownStyle = ComboBoxStyle.DropDownList };
-            cmbService = new ComboBox() { Location = new Point(150, 130), Width = 250, DropDownStyle = ComboBoxStyle.DropDownList };
-            cmbStatus = new ComboBox() { Location = new Point(150, 180), Width = 250, DropDownStyle = ComboBoxStyle.DropDownList };
-
-            cmbServiceType.Items.AddRange(new string[] { "Guide", "Hotel", "Transport" });
-            cmbServiceType.SelectedIndexChanged += CmbServiceType_SelectedIndexChanged;
-
-            cmbStatus.Items.AddRange(new string[] { "Pending", "Confirmed", "Cancelled" });
-            cmbStatus.SelectedIndex = 0;
-
-            // Assign Button
-            btnAssign = new Button() { Text = "Assign", Location = new Point(150, 230), Width = 100 };
-            btnAssign.Click += BtnAssign_Click;
-
-            // View Assigned Services Button
-            this.btnViewAssigned = new Button();
+            this.lblBooking = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblService = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbBooking = new System.Windows.Forms.ComboBox();
+            this.cmbServiceType = new System.Windows.Forms.ComboBox();
+            this.cmbService = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.btnAssign = new System.Windows.Forms.Button();
+            this.btnViewAssigned = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lblBooking
+            // 
+            this.lblBooking.Location = new System.Drawing.Point(0, 0);
+            this.lblBooking.Name = "lblBooking";
+            this.lblBooking.Size = new System.Drawing.Size(100, 23);
+            this.lblBooking.TabIndex = 0;
+            // 
+            // lblType
+            // 
+            this.lblType.Location = new System.Drawing.Point(0, 0);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(100, 23);
+            this.lblType.TabIndex = 2;
+            // 
+            // lblService
+            // 
+            this.lblService.Location = new System.Drawing.Point(0, 0);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(100, 23);
+            this.lblService.TabIndex = 4;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Location = new System.Drawing.Point(0, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(100, 23);
+            this.lblStatus.TabIndex = 6;
+            // 
+            // cmbBooking
+            // 
+            this.cmbBooking.Location = new System.Drawing.Point(0, 0);
+            this.cmbBooking.Name = "cmbBooking";
+            this.cmbBooking.Size = new System.Drawing.Size(121, 21);
+            this.cmbBooking.TabIndex = 1;
+            // 
+            // cmbServiceType
+            // 
+            this.cmbServiceType.Items.AddRange(new object[] {
+            "Guide",
+            "Hotel",
+            "Transport"});
+            this.cmbServiceType.Location = new System.Drawing.Point(0, 0);
+            this.cmbServiceType.Name = "cmbServiceType";
+            this.cmbServiceType.Size = new System.Drawing.Size(121, 21);
+            this.cmbServiceType.TabIndex = 3;
+            // 
+            // cmbService
+            // 
+            this.cmbService.Location = new System.Drawing.Point(0, 0);
+            this.cmbService.Name = "cmbService";
+            this.cmbService.Size = new System.Drawing.Size(121, 21);
+            this.cmbService.TabIndex = 5;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Confirmed",
+            "Cancelled"});
+            this.cmbStatus.Location = new System.Drawing.Point(0, 0);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(121, 21);
+            this.cmbStatus.TabIndex = 7;
+            // 
+            // btnAssign
+            // 
+            this.btnAssign.Location = new System.Drawing.Point(0, 0);
+            this.btnAssign.Name = "btnAssign";
+            this.btnAssign.Size = new System.Drawing.Size(75, 23);
+            this.btnAssign.TabIndex = 8;
+            // 
+            // btnViewAssigned
+            // 
+            this.btnViewAssigned.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnViewAssigned.Location = new System.Drawing.Point(650, 20);
+            this.btnViewAssigned.Name = "btnViewAssigned";
+            this.btnViewAssigned.Size = new System.Drawing.Size(200, 40);
+            this.btnViewAssigned.TabIndex = 9;
             this.btnViewAssigned.Text = "📋 View Assigned Services";
-            this.btnViewAssigned.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            this.btnViewAssigned.Size = new Size(200, 40);
-            this.btnViewAssigned.Location = new Point(650, 20);
-            this.btnViewAssigned.Click += new EventHandler(this.BtnViewAssigned_Click);
-
-            // Add controls to form
-            this.Controls.Add(lblBooking);
-            this.Controls.Add(cmbBooking);
-            this.Controls.Add(lblType);
-            this.Controls.Add(cmbServiceType);
-            this.Controls.Add(lblService);
-            this.Controls.Add(cmbService);
-            this.Controls.Add(lblStatus);
-            this.Controls.Add(cmbStatus);
-            this.Controls.Add(btnAssign);
+            this.btnViewAssigned.Click += new System.EventHandler(this.BtnViewAssigned_Click);
+            // 
+            // AssignResourcesForm
+            // 
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(215)))), ((int)(((byte)(234)))));
+            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.lblBooking);
+            this.Controls.Add(this.cmbBooking);
+            this.Controls.Add(this.lblType);
+            this.Controls.Add(this.cmbServiceType);
+            this.Controls.Add(this.lblService);
+            this.Controls.Add(this.cmbService);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.btnViewAssigned);
+            this.Name = "AssignResourcesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Assign Resources to Booking";
+            this.Load += new System.EventHandler(this.AssignResourcesForm_Load);
+            this.ResumeLayout(false);
+
         }
 
+        private void AssignResourcesForm_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void LoadBookings()
         {

@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DB_M2_Chat;
 
 namespace TravelEase.Forms
 {
@@ -93,5 +94,13 @@ namespace TravelEase.Forms
             contentPanel.Controls.Add(form);
             form.Show();
         }
+
+        private void btnReports_Click(object sender, System.EventArgs e)
+        {
+            var reportForm = new FourthReport { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(reportForm);
+            reportForm.Show(); // or .Show() if you want non-blocking
+        }
+
     }
 }
