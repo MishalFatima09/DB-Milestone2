@@ -11,7 +11,7 @@ namespace TravelEase.Forms
         private Button btnUserMgmt;
         private Button btnCategoryMgmt;
         private Button btnAnalytics;
-
+        private Button btnReports;
         private void InitializeComponent()
         {
             this.sidebar = new Panel();
@@ -26,6 +26,9 @@ namespace TravelEase.Forms
 
             this.btnAnalytics = CreateSidebarButton("📊", "Analytics", 170);
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
+
+            this.btnReports = CreateSidebarButton("📄", "Reports", 220);
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
 
             // 
             // AdminMainForm
@@ -71,6 +74,7 @@ namespace TravelEase.Forms
             this.sidebar.Controls.Add(this.btnUserMgmt);
             this.sidebar.Controls.Add(this.btnCategoryMgmt);
             this.sidebar.Controls.Add(this.btnAnalytics);
+            this.sidebar.Controls.Add(this.btnReports);
 
             // Add panels to main form
             this.Controls.Add(this.contentPanel);
