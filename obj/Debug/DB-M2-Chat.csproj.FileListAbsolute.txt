@@ -111,3 +111,7 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB-M2-Chat.csproj.Up2Da
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.FourthReport.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.GuideRatings.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.TransportPerformance.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.ServiceUse.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpRating.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpResponse.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpRevenue.resources

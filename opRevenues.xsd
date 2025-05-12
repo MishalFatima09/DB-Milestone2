@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="opRevenues" targetNamespace="http://tempuri.org/opRevenues.xsd" xmlns:mstns="http://tempuri.org/opRevenues.xsd" xmlns="http://tempuri.org/opRevenues.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OperatorRevenueTableAdapter" GeneratorDataComponentClassName="OperatorRevenueTableAdapter" Name="OperatorRevenue" UserDataComponentName="OperatorRevenueTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.OperatorRevenue" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT OperatorID, CompanyName, TotalBookings, TotalRevenue FROM dbo.OperatorRevenue</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OperatorID" DataSetColumn="OperatorID" />
+              <Mapping SourceColumn="CompanyName" DataSetColumn="CompanyName" />
+              <Mapping SourceColumn="TotalBookings" DataSetColumn="TotalBookings" />
+              <Mapping SourceColumn="TotalRevenue" DataSetColumn="TotalRevenue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="opRevenues" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="opRevenues" msprop:Generator_DataSetName="opRevenues">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OperatorRevenue" msprop:Generator_RowEvHandlerName="OperatorRevenueRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorRevenueRowDeleted" msprop:Generator_RowDeletingName="OperatorRevenueRowDeleting" msprop:Generator_RowEvArgName="OperatorRevenueRowChangeEvent" msprop:Generator_TablePropName="OperatorRevenue" msprop:Generator_RowChangedName="OperatorRevenueRowChanged" msprop:Generator_RowChangingName="OperatorRevenueRowChanging" msprop:Generator_TableClassName="OperatorRevenueDataTable" msprop:Generator_RowClassName="OperatorRevenueRow" msprop:Generator_TableVarName="tableOperatorRevenue" msprop:Generator_UserTableName="OperatorRevenue">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OperatorID" msprop:Generator_ColumnPropNameInRow="OperatorID" msprop:Generator_ColumnPropNameInTable="OperatorIDColumn" msprop:Generator_ColumnVarNameInTable="columnOperatorID" msprop:Generator_UserColumnName="OperatorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_UserColumnName="CompanyName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalBookings" msprop:Generator_ColumnPropNameInRow="TotalBookings" msprop:Generator_ColumnPropNameInTable="TotalBookingsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalBookings" msprop:Generator_UserColumnName="TotalBookings" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalRevenue" msprop:Generator_ColumnPropNameInRow="TotalRevenue" msprop:Generator_ColumnPropNameInTable="TotalRevenueColumn" msprop:Generator_ColumnVarNameInTable="columnTotalRevenue" msprop:Generator_UserColumnName="TotalRevenue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OperatorRevenue" />
+      <xs:field xpath="mstns:OperatorID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

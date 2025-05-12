@@ -13,41 +13,41 @@ using TravelEase;
 
 namespace DB_M2_Chat
 {
-    public partial class TransportPerformance : Form
+    public partial class OpRevenue : Form
     {
-        public TransportPerformance()
+        public OpRevenue()
         {
             InitializeComponent();
         }
 
-        private void TransportPerformance_Load(object sender, EventArgs e)
+        private void OpRevenue_Load(object sender, EventArgs e)
         {
             string connectionString = DbConfig.ConnectionString;
 
-            string query = "SELECT * FROM TransportOnTime";
+            string query = "SELECT * FROM OperatorRevenue";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "TransportPerformance");
+                adapter.Fill(ds, "operatorRevenue");
 
-                ReportDataSource rds = new ReportDataSource("TransportPerformance", ds.Tables["TransportPerformance"]);
+                ReportDataSource rds = new ReportDataSource("operatorRevenue", ds.Tables["operatorRevenue"]);
 
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
                 this.reportViewer1.RefreshReport();
             }
+
             this.reportViewer1.RefreshReport();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceUse tp = new ServiceUse();
+            OpResponse tp = new OpResponse();
             tp.Show();  // Show the new form normally
             this.Hide();
         }
-
-
     }
 }

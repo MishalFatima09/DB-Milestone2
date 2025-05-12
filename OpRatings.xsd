@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OpRatings" targetNamespace="http://tempuri.org/OpRatings.xsd" xmlns:mstns="http://tempuri.org/OpRatings.xsd" xmlns="http://tempuri.org/OpRatings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OperatorAverageRatingsTableAdapter" GeneratorDataComponentClassName="OperatorAverageRatingsTableAdapter" Name="OperatorAverageRatings" UserDataComponentName="OperatorAverageRatingsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.OperatorAverageRatings" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT OperatorID, CompanyName, AverageRating, ReviewCount FROM dbo.OperatorAverageRatings</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OperatorID" DataSetColumn="OperatorID" />
+              <Mapping SourceColumn="CompanyName" DataSetColumn="CompanyName" />
+              <Mapping SourceColumn="AverageRating" DataSetColumn="AverageRating" />
+              <Mapping SourceColumn="ReviewCount" DataSetColumn="ReviewCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OpRatings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="OpRatings" msprop:Generator_DataSetName="OpRatings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OperatorAverageRatings" msprop:Generator_RowEvHandlerName="OperatorAverageRatingsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorAverageRatingsRowDeleted" msprop:Generator_RowDeletingName="OperatorAverageRatingsRowDeleting" msprop:Generator_RowEvArgName="OperatorAverageRatingsRowChangeEvent" msprop:Generator_TablePropName="OperatorAverageRatings" msprop:Generator_RowChangedName="OperatorAverageRatingsRowChanged" msprop:Generator_RowChangingName="OperatorAverageRatingsRowChanging" msprop:Generator_TableClassName="OperatorAverageRatingsDataTable" msprop:Generator_RowClassName="OperatorAverageRatingsRow" msprop:Generator_TableVarName="tableOperatorAverageRatings" msprop:Generator_UserTableName="OperatorAverageRatings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OperatorID" msprop:Generator_ColumnPropNameInRow="OperatorID" msprop:Generator_ColumnPropNameInTable="OperatorIDColumn" msprop:Generator_ColumnVarNameInTable="columnOperatorID" msprop:Generator_UserColumnName="OperatorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_UserColumnName="CompanyName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AverageRating" msprop:Generator_ColumnPropNameInRow="AverageRating" msprop:Generator_ColumnPropNameInTable="AverageRatingColumn" msprop:Generator_ColumnVarNameInTable="columnAverageRating" msprop:Generator_UserColumnName="AverageRating" type="xs:int" minOccurs="0" />
+              <xs:element name="ReviewCount" msprop:Generator_ColumnPropNameInRow="ReviewCount" msprop:Generator_ColumnPropNameInTable="ReviewCountColumn" msprop:Generator_ColumnVarNameInTable="columnReviewCount" msprop:Generator_UserColumnName="ReviewCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OperatorAverageRatings" />
+      <xs:field xpath="mstns:OperatorID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
