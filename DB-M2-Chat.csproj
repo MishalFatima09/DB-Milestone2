@@ -88,6 +88,7 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DbConfig.cs" />
     <Compile Include="EditProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +201,9 @@
       <DependentUpon>EditTripForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm_Updated.resx" />
+    <EmbeddedResource Include="ManageBooking.resx">
+      <DependentUpon>ManageBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageTripsForm.resx">
       <DependentUpon>ManageTripsForm.cs</DependentUpon>
     </EmbeddedResource>

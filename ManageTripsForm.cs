@@ -46,7 +46,7 @@ namespace TravelEase.Forms
         {
             var result = new List<Trip>();
 
-            using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
+            using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
             {
                 conn.Open();
                 string query = @"SELECT TripID, Title, Description, Price, Duration, Capacity,
@@ -111,7 +111,7 @@ namespace TravelEase.Forms
 
         private void DeleteTripFromDatabase(string tripId)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"))
+            using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
             {
                 conn.Open();
                 string query = "DELETE FROM Trip WHERE TripID = @TripID";

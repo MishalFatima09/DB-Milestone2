@@ -25,10 +25,11 @@ namespace TravelEase
 
         private string GetOperatorIDFromDatabase(string username, string password)
         {
-            string connectionString = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"; 
+            string 
+                String = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"; 
             string operatorID = null;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
             {
                 conn.Open();
 

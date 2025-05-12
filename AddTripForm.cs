@@ -27,7 +27,7 @@ namespace TravelEase.Forms
         private void btnAddTrip_Click(object sender, EventArgs e)
         {
             // Connection string (adjust for your setup)
-            string connectionString = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;";
+            //string connectionString = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;";
 
             // Collect data from form
             string title = txtTitle.Text.Trim();
@@ -50,7 +50,7 @@ namespace TravelEase.Forms
             }
 
             // Insert into database
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
             {
                 string query = @"INSERT INTO Trip 
                 (TripID, Title, Description, Price, Duration, Capacity, TripType, AccessibilityScore, Sustainability_Score, TourCategory, OperatorID)

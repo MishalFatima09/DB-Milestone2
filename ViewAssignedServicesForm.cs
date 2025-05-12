@@ -44,7 +44,7 @@ namespace TravelEase.Forms
             try
             {
                 string connStr = @"Data Source=MISHALSLAPPY\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;";
-                using (SqlConnection conn = new SqlConnection(connStr))
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
                     string query = @"  

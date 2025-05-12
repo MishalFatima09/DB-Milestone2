@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using System.Drawing;
 using DB_M2_Chat;
+using TravelEase;
 
 
 namespace TravelEase.Forms
@@ -111,7 +112,7 @@ namespace TravelEase.Forms
         private void BtnManageBooking_Click(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();
-            var form = new ManageBooking { TopLevel = false, Dock = DockStyle.Fill };
+            var form = new ManageBookingForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
         }

@@ -75,7 +75,7 @@ namespace TravelEase.Forms
 
         private void LoadBookings()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DbConfig.ConnectionString))
             {
                 string query = "SELECT BookingID FROM Booking";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -91,7 +91,7 @@ namespace TravelEase.Forms
 
         private void LoadServices()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DbConfig.ConnectionString))
             {
                 string query = "SELECT ServiceID, Name FROM Service";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -118,7 +118,7 @@ namespace TravelEase.Forms
             string serviceId = cmbService.SelectedItem.ToString().Split('-')[0].Trim();
             string status = cmbStatus.SelectedItem.ToString();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(DbConfig.ConnectionString))
             {
                 string query = "INSERT INTO AssignedService (AssignmentID, Status, ServiceID, BookingID) VALUES (@AssignmentID, @Status, @ServiceID, @BookingID)";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -148,7 +148,7 @@ namespace TravelEase.Forms
 
             if (!string.IsNullOrEmpty(selectedType))
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlConnection con = new SqlConnection(DbConfig.ConnectionString))
                 {
                     string query = "SELECT ServiceID, Name FROM Service WHERE Type = @Type";
                     SqlCommand cmd = new SqlCommand(query, con);
