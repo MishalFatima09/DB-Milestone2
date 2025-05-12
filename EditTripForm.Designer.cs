@@ -98,10 +98,19 @@ namespace DB_M2_Chat
             txtDescription.Height = 50;
 
             cmbTripType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTripType.Items.AddRange(new object[] { "Adventure", "Cultural", "Relaxation", "Wildlife", "Historical" });
+            cmbTripType.Items.AddRange(new object[] {"Guided",
+            "Leisure",
+            "Adventure",
+            "Cultural",
+            "Wildlife",
+            "Nature",
+            "Cruise" });
 
             cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCategory.Items.AddRange(new object[] { "Eco", "Luxury", "Budget", "Family", "Solo" });
+            cmbCategory.Items.AddRange(new object[] {  "City",
+            "Food & Wine",
+            "History",
+            "Wildlife" });
 
             numAccessibility.Maximum = 10;
             numSustainability.Maximum = 10;
@@ -127,20 +136,20 @@ namespace DB_M2_Chat
             this.PerformLayout();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            trip.Title = txtTitle.Text;
-            trip.Description = txtDescription.Text;
-            trip.Price = numPrice.Value;
-            trip.Duration = (int)numDuration.Value;
-            trip.Capacity = (int)numCapacity.Value;
-            trip.TripType = cmbTripType.SelectedItem?.ToString();
-            trip.AccessibilityScore = (int)numAccessibility.Value;
-            trip.SustainabilityScore = (int)numSustainability.Value;
-            trip.TourCategory = cmbCategory.SelectedItem?.ToString();
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    trip.Title = txtTitle.Text;
+        //    trip.Description = txtDescription.Text;
+        //    trip.Price = numPrice.Value;
+        //    trip.Duration = (int)numDuration.Value;
+        //    trip.Capacity = (int)numCapacity.Value;
+        //    trip.TripType = cmbTripType.SelectedItem?.ToString();
+        //    trip.AccessibilityScore = (int)numAccessibility.Value;
+        //    trip.Sustainability_Score = (int)numSustainability.Value;
+        //    trip.TourCategory = cmbCategory.SelectedItem?.ToString();
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
+        //    this.DialogResult = DialogResult.OK;
+        //    this.Close();
+        //}
     }
 }

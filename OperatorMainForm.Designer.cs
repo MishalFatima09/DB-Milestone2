@@ -14,7 +14,7 @@ namespace TravelEase.Forms
         private int sidebarMinWidth = 50;
 
         private Label lblTitle;
-        private Button btnAddTrip, btnManageTrips, btnAssignResources;
+        private Button btnAddTrip, btnManageTrips, btnAssignResources, btnManageBooking;
 
         private void InitializeComponent()
         {
@@ -59,8 +59,6 @@ namespace TravelEase.Forms
             this.contentPanel.Controls.Add(pictureBox);
 
 
-
-
             // 
             // sidebarTimer
             // 
@@ -95,12 +93,18 @@ namespace TravelEase.Forms
             this.btnAssignResources = CreateSidebarButton("📦", "Assign Resources", 170);
             this.btnAssignResources.Click += new System.EventHandler(this.BtnAssignResources_Click);
 
+            //
+            // btnManageBookings
+            this.btnManageBooking = CreateSidebarButton("📋", "Manage Bookings", 220);
+            this.btnManageBooking.Click += new System.EventHandler(this.BtnManageBooking_Click);
+
             // Add controls to sidebar
             this.sidebar.Controls.AddRange(new Control[] {
                 this.lblTitle,
                 this.btnAddTrip,
                 this.btnManageTrips,
-                this.btnAssignResources
+                this.btnAssignResources,
+                this.btnManageBooking
             });
 
             // Add panels to form

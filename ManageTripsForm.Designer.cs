@@ -40,49 +40,67 @@ namespace TravelEase.Forms
             this.dgvTrips.AutoGenerateColumns = false;
             this.dgvTrips.AllowUserToAddRows = false;
 
-            // Columns
-            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Title", DataPropertyName = "Title" });
-            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Price", DataPropertyName = "Price" });
-            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Duration", DataPropertyName = "Duration" });
+            // TripID (hidden)
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "TripID",
+                DataPropertyName = "TripID",
+                Name = "TripID",
+                Visible = false // Hidden from user
+            });
+
+            // Visible Columns
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Title",
+                DataPropertyName = "Title",
+                Name = "Title"
+            });
+
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Price",
+                DataPropertyName = "Price",
+                Name = "Price"
+            });
+
+            dgvTrips.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Duration",
+                DataPropertyName = "Duration",
+                Name = "Duration"
+            });
 
             // Edit Button
-            var editCol = new DataGridViewButtonColumn();
-            editCol.HeaderText = "";
-            editCol.Text = "Edit";
-            editCol.UseColumnTextForButtonValue = true;
+            var editCol = new DataGridViewButtonColumn
+            {
+                HeaderText = "",
+                Text = "Edit",
+                UseColumnTextForButtonValue = true,
+                Name = "Edit" //  Must match click handler
+            };
             dgvTrips.Columns.Add(editCol);
 
             // Delete Button
-            var deleteCol = new DataGridViewButtonColumn();
-            deleteCol.HeaderText = "";
-            deleteCol.Text = "Delete";
-            deleteCol.UseColumnTextForButtonValue = true;
+            var deleteCol = new DataGridViewButtonColumn
+            {
+                HeaderText = "",
+                Text = "Delete",
+                UseColumnTextForButtonValue = true,
+                Name = "Delete" //  Must match click handler
+            };
             dgvTrips.Columns.Add(deleteCol);
 
             // Event
             this.dgvTrips.CellClick += new DataGridViewCellEventHandler(this.dgvTrips_CellClick);
 
-            // Add to form
+            // Add controls to the form
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvTrips);
-
         }
 
-        //private void dgvTrips_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
-        //private void btnRefresh_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void btnSearch_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
