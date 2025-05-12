@@ -182,6 +182,11 @@
     <Compile Include="ServiceIntegrationForm.Designer.cs">
       <DependentUpon>ServiceIntegrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TravelEaseDataSetReport2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TravelerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +271,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TravelEaseDataSetReport2.xsc">
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
+    </None>
+    <None Include="TravelEaseDataSetReport2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TravelEaseDataSetReport2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TravelEaseDataSetReport2.xss">
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

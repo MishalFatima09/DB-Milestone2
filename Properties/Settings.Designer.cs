@@ -22,5 +22,16 @@ namespace DB_M2_Chat.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Securi" +
+            "ty=True;Encrypt=True;TrustServerCertificate=True")]
+        public string TravelEaseConnectionString {
+            get {
+                return ((string)(this["TravelEaseConnectionString"]));
+            }
+        }
     }
 }
