@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TravelEaseDataSet1" targetNamespace="http://tempuri.org/TravelEaseDataSet11.xsd" xmlns:mstns="http://tempuri.org/TravelEaseDataSet11.xsd" xmlns="http://tempuri.org/TravelEaseDataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HotelOccupancyTableAdapter" GeneratorDataComponentClassName="HotelOccupancyTableAdapter" Name="HotelOccupancy" UserDataComponentName="HotelOccupancyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.HotelOccupancy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT HotelID, HotelName, TotalRooms, OccupiedRooms, OccupancyRate FROM dbo.HotelOccupancy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HotelID" DataSetColumn="HotelID" />
+              <Mapping SourceColumn="HotelName" DataSetColumn="HotelName" />
+              <Mapping SourceColumn="TotalRooms" DataSetColumn="TotalRooms" />
+              <Mapping SourceColumn="OccupiedRooms" DataSetColumn="OccupiedRooms" />
+              <Mapping SourceColumn="OccupancyRate" DataSetColumn="OccupancyRate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TravelEaseDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TravelEaseDataSet1" msprop:Generator_DataSetName="TravelEaseDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HotelOccupancy" msprop:Generator_RowEvHandlerName="HotelOccupancyRowChangeEventHandler" msprop:Generator_RowDeletedName="HotelOccupancyRowDeleted" msprop:Generator_RowDeletingName="HotelOccupancyRowDeleting" msprop:Generator_RowEvArgName="HotelOccupancyRowChangeEvent" msprop:Generator_TablePropName="HotelOccupancy" msprop:Generator_RowChangedName="HotelOccupancyRowChanged" msprop:Generator_RowChangingName="HotelOccupancyRowChanging" msprop:Generator_TableClassName="HotelOccupancyDataTable" msprop:Generator_RowClassName="HotelOccupancyRow" msprop:Generator_TableVarName="tableHotelOccupancy" msprop:Generator_UserTableName="HotelOccupancy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HotelID" msprop:Generator_ColumnPropNameInRow="HotelID" msprop:Generator_ColumnPropNameInTable="HotelIDColumn" msprop:Generator_ColumnVarNameInTable="columnHotelID" msprop:Generator_UserColumnName="HotelID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HotelName" msprop:Generator_ColumnPropNameInRow="HotelName" msprop:Generator_ColumnPropNameInTable="HotelNameColumn" msprop:Generator_ColumnVarNameInTable="columnHotelName" msprop:Generator_UserColumnName="HotelName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalRooms" msprop:Generator_ColumnPropNameInRow="TotalRooms" msprop:Generator_ColumnPropNameInTable="TotalRoomsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalRooms" msprop:Generator_UserColumnName="TotalRooms" type="xs:int" minOccurs="0" />
+              <xs:element name="OccupiedRooms" msprop:Generator_ColumnPropNameInRow="OccupiedRooms" msprop:Generator_ColumnPropNameInTable="OccupiedRoomsColumn" msprop:Generator_ColumnVarNameInTable="columnOccupiedRooms" msprop:Generator_UserColumnName="OccupiedRooms" type="xs:int" minOccurs="0" />
+              <xs:element name="OccupancyRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="OccupancyRate" msprop:Generator_ColumnPropNameInTable="OccupancyRateColumn" msprop:Generator_ColumnVarNameInTable="columnOccupancyRate" msprop:Generator_UserColumnName="OccupancyRate" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HotelOccupancy" />
+      <xs:field xpath="mstns:HotelID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

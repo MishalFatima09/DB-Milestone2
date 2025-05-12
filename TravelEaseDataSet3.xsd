@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TravelEaseDataSet3" targetNamespace="http://tempuri.org/TravelEaseDataSet3.xsd" xmlns:mstns="http://tempuri.org/TravelEaseDataSet3.xsd" xmlns="http://tempuri.org/TravelEaseDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GuideRatingsTableAdapter" GeneratorDataComponentClassName="GuideRatingsTableAdapter" Name="GuideRatings" UserDataComponentName="GuideRatingsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.GuideRatings" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT GuideID, GuideName, AverageRating, ReviewCount FROM dbo.GuideRatings</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GuideID" DataSetColumn="GuideID" />
+              <Mapping SourceColumn="GuideName" DataSetColumn="GuideName" />
+              <Mapping SourceColumn="AverageRating" DataSetColumn="AverageRating" />
+              <Mapping SourceColumn="ReviewCount" DataSetColumn="ReviewCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TravelEaseDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TravelEaseDataSet3" msprop:Generator_DataSetName="TravelEaseDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GuideRatings" msprop:Generator_RowEvHandlerName="GuideRatingsRowChangeEventHandler" msprop:Generator_RowDeletedName="GuideRatingsRowDeleted" msprop:Generator_RowDeletingName="GuideRatingsRowDeleting" msprop:Generator_RowEvArgName="GuideRatingsRowChangeEvent" msprop:Generator_TablePropName="GuideRatings" msprop:Generator_RowChangedName="GuideRatingsRowChanged" msprop:Generator_RowChangingName="GuideRatingsRowChanging" msprop:Generator_TableClassName="GuideRatingsDataTable" msprop:Generator_RowClassName="GuideRatingsRow" msprop:Generator_TableVarName="tableGuideRatings" msprop:Generator_UserTableName="GuideRatings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GuideID" msprop:Generator_ColumnPropNameInRow="GuideID" msprop:Generator_ColumnPropNameInTable="GuideIDColumn" msprop:Generator_ColumnVarNameInTable="columnGuideID" msprop:Generator_UserColumnName="GuideID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuideName" msprop:Generator_ColumnPropNameInRow="GuideName" msprop:Generator_ColumnPropNameInTable="GuideNameColumn" msprop:Generator_ColumnVarNameInTable="columnGuideName" msprop:Generator_UserColumnName="GuideName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AverageRating" msprop:Generator_ColumnPropNameInRow="AverageRating" msprop:Generator_ColumnPropNameInTable="AverageRatingColumn" msprop:Generator_ColumnVarNameInTable="columnAverageRating" msprop:Generator_UserColumnName="AverageRating" type="xs:int" minOccurs="0" />
+              <xs:element name="ReviewCount" msprop:Generator_ColumnPropNameInRow="ReviewCount" msprop:Generator_ColumnPropNameInTable="ReviewCountColumn" msprop:Generator_ColumnVarNameInTable="columnReviewCount" msprop:Generator_UserColumnName="ReviewCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GuideRatings" />
+      <xs:field xpath="mstns:GuideID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
