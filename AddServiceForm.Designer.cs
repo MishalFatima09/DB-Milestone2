@@ -1,105 +1,455 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿//using System.Drawing;
+//using System.Windows.Forms;
+//using System;
 
-namespace TravelEase.Forms
+//namespace DB_M2_Chat
+//{
+//    partial class AddServiceForm
+//    {
+//        private System.ComponentModel.IContainer components = null;
+
+//        // Form controls
+//        private Label lblTitle;
+//        private Label lblDescription;
+//        private Label lblServiceName;
+//        private TextBox txtServiceName;
+//        private Label lblServiceType;
+//        private ComboBox cmbServiceType;
+//        private Label lblServiceDesc;
+//        private TextBox txtDescription;
+//        private Label lblPrice;
+//        private TextBox txtPrice;
+//        private Panel panelDynamicFields;
+//        private Button btnAddService;
+//        private Button btnCancel;
+//        private Panel panelActions;
+
+//        protected override void Dispose(bool disposing)
+//        {
+//            if (disposing && (components != null))
+//            {
+//                components.Dispose();
+//            }
+//            base.Dispose(disposing);
+//        }
+
+//        private void InitializeComponent()
+//        {
+//            this.components = new System.ComponentModel.Container();
+
+//            int labelX = 40;
+//            int inputX = 180;
+//            int width = 300;
+
+//            // Title Label
+//            this.lblTitle = new Label
+//            {
+//                Text = "➕ Add New Service",
+//                Font = new Font("Segoe UI", 14, FontStyle.Bold),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(30, 20),
+//                AutoSize = true
+//            };
+
+//            // Description Label
+//            this.lblDescription = new Label
+//            {
+//                Text = "Create and publish a new service for travelers",
+//                Font = new Font("Segoe UI", 10),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(32, 50),
+//                AutoSize = true
+//            };
+
+//            // Service Name Label
+//            this.lblServiceName = new Label
+//            {
+//                Text = "Service Name:",
+//                Font = new Font("Segoe UI", 9),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(labelX, 90),
+//                Size = new Size(120, 20)
+//            };
+
+//            // Service Name TextBox
+//            this.txtServiceName = new TextBox
+//            {
+//                Location = new Point(inputX, 90),
+//                Size = new Size(width, 25),
+//                Font = new Font("Segoe UI", 9)
+//            };
+
+//            // Service Type Label
+//            this.lblServiceType = new Label
+//            {
+//                Text = "Service Type:",
+//                Font = new Font("Segoe UI", 9),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(labelX, 125),
+//                Size = new Size(120, 20)
+//            };
+
+//            // Service Type ComboBox
+//            this.cmbServiceType = new ComboBox
+//            {
+//                Location = new Point(inputX, 125),
+//                Size = new Size(width, 25),
+//                DropDownStyle = ComboBoxStyle.DropDownList,
+//                Font = new Font("Segoe UI", 9)
+//            };
+//            this.cmbServiceType.SelectedIndexChanged += new EventHandler(this.cmbServiceType_SelectedIndexChanged);
+
+//            // Description Label
+//            this.lblServiceDesc = new Label
+//            {
+//                Text = "Description:",
+//                Font = new Font("Segoe UI", 9),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(labelX, 160),
+//                Size = new Size(120, 20)
+//            };
+
+//            // Description TextBox
+//            this.txtDescription = new TextBox
+//            {
+//                Location = new Point(inputX, 160),
+//                Size = new Size(width, 60),
+//                Multiline = true,
+//                Font = new Font("Segoe UI", 9)
+//            };
+
+//            // Price Label
+//            this.lblPrice = new Label
+//            {
+//                Text = "Price ($):",
+//                Font = new Font("Segoe UI", 9),
+//                ForeColor = Color.FromArgb(11, 57, 84),
+//                Location = new Point(labelX, 230),
+//                Size = new Size(120, 20)
+//            };
+
+//            // Price TextBox
+//            this.txtPrice = new TextBox
+//            {
+//                Location = new Point(inputX, 230),
+//                Size = new Size(150, 25),
+//                Font = new Font("Segoe UI", 9)
+//            };
+
+//            // Dynamic Fields Panel
+//            this.panelDynamicFields = new Panel
+//            {
+//                Location = new Point(labelX, 270),
+//                Size = new Size(480, 200),
+//                BackColor = Color.FromArgb(191, 215, 234),
+//                BorderStyle = BorderStyle.None,
+//                AutoScroll = true
+//            };
+
+//            // Actions Panel
+//            this.panelActions = new Panel
+//            {
+//                Location = new Point(30, 480),
+//                Size = new Size(760, 60),
+//                BackColor = Color.FromArgb(191, 215, 234)
+//            };
+
+//            // Add Button
+//            this.btnAddService = new Button
+//            {
+//                Text = "Add Service",
+//                BackColor = Color.FromArgb(40, 167, 69),
+//                ForeColor = Color.White,
+//                FlatStyle = FlatStyle.Flat,
+//                Location = new Point(30, 10),
+//                Size = new Size(120, 35)
+//            };
+//            this.btnAddService.FlatAppearance.BorderSize = 0;
+//            this.btnAddService.Click += new EventHandler(this.btnAddService_Click);
+
+//            // Cancel Button
+//            this.btnCancel = new Button
+//            {
+//                Text = "Cancel",
+//                BackColor = Color.FromArgb(108, 117, 125),
+//                ForeColor = Color.White,
+//                FlatStyle = FlatStyle.Flat,
+//                Location = new Point(160, 10),
+//                Size = new Size(100, 35)
+//            };
+//            this.btnCancel.FlatAppearance.BorderSize = 0;
+//            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
+
+//            // Add buttons to actions panel
+//            this.panelActions.Controls.AddRange(new Control[]
+//            {
+//                this.btnAddService,
+//                this.btnCancel
+//            });
+
+//            // Form properties
+//            this.BackColor = Color.FromArgb(191, 215, 234);
+//            this.ClientSize = new Size(820, 550);
+//            this.FormBorderStyle = FormBorderStyle.None;
+
+//            // Add controls to form
+//            this.Controls.AddRange(new Control[]
+//            {
+//                this.lblTitle,
+//                this.lblDescription,
+//                this.lblServiceName,
+//                this.txtServiceName,
+//                this.lblServiceType,
+//                this.cmbServiceType,
+//                this.lblServiceDesc,
+//                this.txtDescription,
+//                this.lblPrice,
+//                this.txtPrice,
+//                this.panelDynamicFields,
+//                this.panelActions
+//            });
+
+//            this.Load += new EventHandler(this.AddServiceForm_Load);
+//        }
+//    }
+//}
+
+
+using System.Drawing;
+using System.Windows.Forms;
+using System;
+
+namespace DB_M2_Chat
 {
     partial class AddServiceForm
     {
-        private Label lbl;
-        private Label lblName;
-        private TextBox txtName;
-        private Label lblType;
-        private ComboBox cmbType;
-        private Button btnSubmit;
+        private System.ComponentModel.IContainer components = null;
+
+        // Form controls
+        private Label lblTitle;
+        private Label lblDescription;
+        private Label lblServiceID;
+        private TextBox txtServiceID;
+        private Label lblProviderID;
+        private TextBox txtProviderID;
+        private Label lblServiceName;
+        private TextBox txtServiceName;
+        private Label lblServiceType;
+        private ComboBox cmbServiceType;
+        private Label lblServiceDesc;
+        private TextBox txtDescription;
+        private Panel panelDynamicFields;
+        private Button btnAddService;
+        private Button btnCancel;
+        private Panel panelActions;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         private void InitializeComponent()
         {
-            this.lbl = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblType = new System.Windows.Forms.Label();
-            this.cmbType = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(57)))), ((int)(((byte)(84)))));
-            this.lbl.Location = new System.Drawing.Point(30, 20);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(145, 25);
-            this.lbl.TabIndex = 0;
-            this.lbl.Text = "➕ Add Service";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(30, 70);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(77, 13);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Service Name:";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(150, 68);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 20);
-            this.txtName.TabIndex = 2;
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(30, 110);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(34, 13);
-            this.lblType.TabIndex = 3;
-            this.lblType.Text = "Type:";
-            // 
-            // cmbType
-            // 
-            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbType.Items.AddRange(new object[] {
-            "Accommodation",
-            "Transport",
-            "Guide",
-            "Other"});
-            this.cmbType.Location = new System.Drawing.Point(150, 108);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(250, 21);
-            this.cmbType.TabIndex = 4;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(120)))), ((int)(((byte)(180)))));
-            this.btnSubmit.FlatAppearance.BorderSize = 0;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(150, 160);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 23);
-            this.btnSubmit.TabIndex = 5;
-            this.btnSubmit.Text = "Add";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            // 
-            // AddServiceForm
-            // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(215)))), ((int)(((byte)(234)))));
-            this.ClientSize = new System.Drawing.Size(545, 273);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblType);
-            this.Controls.Add(this.cmbType);
-            this.Controls.Add(this.btnSubmit);
-            this.Name = "AddServiceForm";
-            this.Text = "Add Service";
-            this.Load += new System.EventHandler(this.AddServiceForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            this.components = new System.ComponentModel.Container();
 
+            int labelX = 40;
+            int inputX = 180;
+            int width = 300;
+
+            // Title Label
+            this.lblTitle = new Label
+            {
+                Text = "➕ Add New Service",
+                Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(30, 20),
+                AutoSize = true
+            };
+
+            // Description Label
+            this.lblDescription = new Label
+            {
+                Text = "Create a new service for your provider account",
+                Font = new Font("Segoe UI", 10),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(32, 50),
+                AutoSize = true
+            };
+
+            // Service ID Label
+            this.lblServiceID = new Label
+            {
+                Text = "Service ID:",
+                Font = new Font("Segoe UI", 9),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(labelX, 90),
+                Size = new Size(120, 20)
+            };
+
+            // Service ID TextBox
+            this.txtServiceID = new TextBox
+            {
+                Location = new Point(inputX, 90),
+                Size = new Size(width, 25),
+                Font = new Font("Segoe UI", 9),
+                Enabled = false
+            };
+
+            // Provider ID Label
+            this.lblProviderID = new Label
+            {
+                Text = "Provider ID:",
+                Font = new Font("Segoe UI", 9),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(labelX, 125),
+                Size = new Size(120, 20)
+            };
+
+            // Provider ID TextBox
+            this.txtProviderID = new TextBox
+            {
+                Location = new Point(inputX, 125),
+                Size = new Size(width, 25),
+                Font = new Font("Segoe UI", 9)
+            };
+
+            // Service Name Label
+            this.lblServiceName = new Label
+            {
+                Text = "Service Name:",
+                Font = new Font("Segoe UI", 9),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(labelX, 160),
+                Size = new Size(120, 20)
+            };
+
+            // Service Name TextBox
+            this.txtServiceName = new TextBox
+            {
+                Location = new Point(inputX, 160),
+                Size = new Size(width, 25),
+                Font = new Font("Segoe UI", 9)
+            };
+
+            // Service Type Label
+            this.lblServiceType = new Label
+            {
+                Text = "Service Type:",
+                Font = new Font("Segoe UI", 9),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(labelX, 195),
+                Size = new Size(120, 20)
+            };
+
+            // Service Type ComboBox
+            this.cmbServiceType = new ComboBox
+            {
+                Location = new Point(inputX, 195),
+                Size = new Size(width, 25),
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = new Font("Segoe UI", 9)
+            };
+            this.cmbServiceType.SelectedIndexChanged += new EventHandler(this.cmbServiceType_SelectedIndexChanged);
+
+            // Description Label
+            this.lblServiceDesc = new Label
+            {
+                Text = "Description:",
+                Font = new Font("Segoe UI", 9),
+                ForeColor = Color.FromArgb(11, 57, 84),
+                Location = new Point(labelX, 230),
+                Size = new Size(120, 20)
+            };
+
+            // Description TextBox
+            this.txtDescription = new TextBox
+            {
+                Location = new Point(inputX, 230),
+                Size = new Size(width, 60),
+                Multiline = true,
+                Font = new Font("Segoe UI", 9)
+            };
+
+            // Dynamic Fields Panel
+            this.panelDynamicFields = new Panel
+            {
+                Location = new Point(labelX, 300),
+                Size = new Size(480, 170),
+                BackColor = Color.FromArgb(191, 215, 234),
+                BorderStyle = BorderStyle.None,
+                AutoScroll = true
+            };
+
+            // Actions Panel
+            this.panelActions = new Panel
+            {
+                Location = new Point(30, 480),
+                Size = new Size(760, 60),
+                BackColor = Color.FromArgb(191, 215, 234)
+            };
+
+            // Add Button
+            this.btnAddService = new Button
+            {
+                Text = "Add Service",
+                BackColor = Color.FromArgb(40, 167, 69),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Location = new Point(30, 10),
+                Size = new Size(120, 35)
+            };
+            this.btnAddService.FlatAppearance.BorderSize = 0;
+            this.btnAddService.Click += new EventHandler(this.btnAddService_Click);
+
+            // Cancel Button
+            this.btnCancel = new Button
+            {
+                Text = "Cancel",
+                BackColor = Color.FromArgb(108, 117, 125),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Location = new Point(160, 10),
+                Size = new Size(100, 35)
+            };
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
+
+            // Add buttons to actions panel
+            this.panelActions.Controls.AddRange(new Control[]
+            {
+                this.btnAddService,
+                this.btnCancel
+            });
+
+            // Form properties
+            this.BackColor = Color.FromArgb(191, 215, 234);
+            this.ClientSize = new Size(820, 550);
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Add controls to form
+            this.Controls.AddRange(new Control[]
+            {
+                this.lblTitle,
+                this.lblDescription,
+                this.lblServiceID,
+                this.txtServiceID,
+                this.lblProviderID,
+                this.txtProviderID,
+                this.lblServiceName,
+                this.txtServiceName,
+                this.lblServiceType,
+                this.cmbServiceType,
+                this.lblServiceDesc,
+                this.txtDescription,
+                this.panelDynamicFields,
+                this.panelActions
+            });
+
+            this.Load += new EventHandler(this.AddServiceForm_Load);
         }
     }
 }

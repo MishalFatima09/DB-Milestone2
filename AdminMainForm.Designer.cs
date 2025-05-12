@@ -12,23 +12,27 @@ namespace TravelEase.Forms
         private Button btnCategoryMgmt;
         private Button btnAnalytics;
         private Button btnReports;
+        private Button btnReviewMod;
+
         private void InitializeComponent()
         {
             this.sidebar = new Panel();
             this.contentPanel = new Panel();
             this.sidebarTimer = new Timer();
             this.lblTitle = new Label();
-            this.btnUserMgmt = CreateSidebarButton("👤", "User Management", 70);
+            this.btnUserMgmt = CreateSidebarButton("👥", "User Management", 70);
             this.btnUserMgmt.Click += new System.EventHandler(this.btnUserMgmt_Click);
 
-            this.btnCategoryMgmt = CreateSidebarButton("🗂️", "Categories", 120);
+            this.btnCategoryMgmt = CreateSidebarButton("🗂️", "Tour Categories", 120);
             this.btnCategoryMgmt.Click += new System.EventHandler(this.btnCategoryMgmt_Click);
 
-            this.btnAnalytics = CreateSidebarButton("📊", "Analytics", 170);
+            this.btnAnalytics = CreateSidebarButton("📊", "Platform Analysis", 170);
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
 
-            this.btnReports = CreateSidebarButton("📄", "Reports", 220);
+            this.btnReports = CreateSidebarButton("📄", "Reports", 270);
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            this.btnReviewMod = CreateSidebarButton("⭐", "Review Moderation", 220);
+            this.btnReviewMod.Click += new System.EventHandler(this.btnReviewMod_Click);
 
             // 
             // AdminMainForm
@@ -75,6 +79,7 @@ namespace TravelEase.Forms
             this.sidebar.Controls.Add(this.btnCategoryMgmt);
             this.sidebar.Controls.Add(this.btnAnalytics);
             this.sidebar.Controls.Add(this.btnReports);
+            this.sidebar.Controls.Add(this.btnReviewMod);
 
             // Add panels to main form
             this.Controls.Add(this.contentPanel);

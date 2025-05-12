@@ -1,3 +1,4 @@
+using DB_M2_Chat;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -102,5 +103,12 @@ namespace TravelEase.Forms
             reportForm.Show(); // or .Show() if you want non-blocking
         }
 
+        private void btnReviewMod_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new ReviewModerationForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
     }
 }
