@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
+using DB_M2_Chat;
 
 namespace TravelEase.Forms
 {
@@ -80,10 +81,18 @@ namespace TravelEase.Forms
             }
         }
 
-        private void btnMyServices_Click(object sender, EventArgs e)
+        private void btnServiceIntegration_Click(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();
-            var form = new MyServicesForm { TopLevel = false, Dock = DockStyle.Fill };
+            var form = new ServiceIntegrationForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnAllServices_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new AllServicesForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
         }
@@ -96,10 +105,18 @@ namespace TravelEase.Forms
             form.Show();
         }
 
-        private void btnBookingRequests_Click(object sender, EventArgs e)
+        private void btnBookingManagement_Click(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();
-            var form = new BookingRequestsForm { TopLevel = false, Dock = DockStyle.Fill };
+            var form = new BookingManagementForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnPerformanceReports_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new PerformanceReportForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
         }

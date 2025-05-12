@@ -9,7 +9,7 @@ namespace TravelEase.Forms
         private Panel sidebar, contentPanel;
         private Timer sidebarTimer;
         private Label lblTitle;
-        private Button btnMyServices, btnAddService, btnBookingRequests;
+        private Button btnServiceIntegration, btnAllServices, btnAddService, btnBookingManagement, btnPerformanceReports;
 
         private void InitializeComponent()
         {
@@ -52,22 +52,28 @@ namespace TravelEase.Forms
             };
 
             // sidebar buttons
-            btnMyServices = CreateSidebarButton("🏷️", "My Services", 70);
-            this.btnMyServices.Click += new System.EventHandler(this.btnMyServices_Click);
+            btnServiceIntegration = CreateSidebarButton("📨", "Service Integration", 70);
+            btnAllServices = CreateSidebarButton("🏷️", "All Services", 120);
+            btnAddService = CreateSidebarButton("➕", "Add Service", 170);
+            btnBookingManagement = CreateSidebarButton("📆", "Booking Management", 220);
+            btnPerformanceReports = CreateSidebarButton("📊", "Performance Reports", 270);
 
-            btnAddService = CreateSidebarButton("➕", "Add Service", 120);
-            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
-
-            btnBookingRequests = CreateSidebarButton("📩", "Booking Requests", 170);
-            this.btnBookingRequests.Click += new System.EventHandler(this.btnBookingRequests_Click);
+            // button click events
+            btnServiceIntegration.Click += btnServiceIntegration_Click;
+            btnAllServices.Click += btnAllServices_Click;
+            btnAddService.Click += btnAddService_Click;
+            btnBookingManagement.Click += btnBookingManagement_Click;
+            btnPerformanceReports.Click += btnPerformanceReports_Click;
 
             // assemble sidebar
             sidebar.Controls.AddRange(new Control[]
             {
                 lblTitle,
-                btnMyServices,
+                btnServiceIntegration,
+                btnAllServices,
                 btnAddService,
-                btnBookingRequests
+                btnBookingManagement,
+                btnPerformanceReports
             });
 
             // add to form

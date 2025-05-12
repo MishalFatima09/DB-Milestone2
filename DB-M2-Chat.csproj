@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +84,12 @@
     <Compile Include="AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllServicesForm.Designer.cs">
+      <DependentUpon>AllServicesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnalyticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +101,12 @@
     </Compile>
     <Compile Include="AssignResourcesForm.Designer.cs">
       <DependentUpon>AssignResourcesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingManagementForm.Designer.cs">
+      <DependentUpon>BookingManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BookingRequestsForm.cs">
       <SubType>Form</SubType>
@@ -151,6 +165,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelOccupancyDataSet.xsd</DependentUpon>
+    <Compile Include="EditServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditServiceForm.Designer.cs">
+      <DependentUpon>EditServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm_Updated.cs">
       <SubType>Form</SubType>
@@ -229,6 +248,11 @@
     </Compile>
     <Compile Include="Preferred.Designer.cs">
       <DependentUpon>Preferred.cs</DependentUpon>
+    <Compile Include="PerformanceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformanceReportForm.Designer.cs">
+      <DependentUpon>PerformanceReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,6 +267,12 @@
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewModerationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewModerationForm.Designer.cs">
+      <DependentUpon>ReviewModerationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchTripsForm.cs">
       <SubType>Form</SubType>
@@ -303,6 +333,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+    <Compile Include="ServiceIntegrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceIntegrationForm.Designer.cs">
+      <DependentUpon>ServiceIntegrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TravelEaseDataSetReport2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
     </Compile>
     <Compile Include="TravelerMainForm.cs">
       <SubType>Form</SubType>
@@ -322,6 +362,7 @@
     <Compile Include="ViewAssignedServicesForm.Designer.cs">
       <DependentUpon>ViewAssignedServicesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AddServiceForm.resx">
       <DependentUpon>AddServiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,6 +637,16 @@
     </None>
     <None Include="TravelEaseDataSet5.xss">
       <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+    <None Include="TravelEaseDataSetReport2.xsc">
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
+    </None>
+    <None Include="TravelEaseDataSetReport2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TravelEaseDataSetReport2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TravelEaseDataSetReport2.xss">
+      <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

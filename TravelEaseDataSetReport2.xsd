@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TravelEaseDataSetReport2" targetNamespace="http://tempuri.org/TravelEaseDataSetReport2.xsd" xmlns:mstns="http://tempuri.org/TravelEaseDataSetReport2.xsd" xmlns="http://tempuri.org/TravelEaseDataSetReport2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PreferredTripTypesTableAdapter" GeneratorDataComponentClassName="PreferredTripTypesTableAdapter" Name="PreferredTripTypes" UserDataComponentName="PreferredTripTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.PreferredTripTypes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TripType, BookingCount FROM dbo.PreferredTripTypes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TripType" DataSetColumn="TripType" />
+              <Mapping SourceColumn="BookingCount" DataSetColumn="BookingCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TravelerAgeNationalityDistributionTableAdapter" GeneratorDataComponentClassName="TravelerAgeNationalityDistributionTableAdapter" Name="TravelerAgeNationalityDistribution" UserDataComponentName="TravelerAgeNationalityDistributionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.TravelerAgeNationalityDistribution" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nationality, Age, TravelerCount FROM dbo.TravelerAgeNationalityDistribution</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nationality" DataSetColumn="Nationality" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="TravelerCount" DataSetColumn="TravelerCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TravelerSpendingHabitsTableAdapter" GeneratorDataComponentClassName="TravelerSpendingHabitsTableAdapter" Name="TravelerSpendingHabits" UserDataComponentName="TravelerSpendingHabitsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.TravelerSpendingHabits" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TravelerID, TravelerName, TotalBookings, TotalSpent, AverageSpending FROM dbo.TravelerSpendingHabits</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TravelerID" DataSetColumn="TravelerID" />
+              <Mapping SourceColumn="TravelerName" DataSetColumn="TravelerName" />
+              <Mapping SourceColumn="TotalBookings" DataSetColumn="TotalBookings" />
+              <Mapping SourceColumn="TotalSpent" DataSetColumn="TotalSpent" />
+              <Mapping SourceColumn="AverageSpending" DataSetColumn="AverageSpending" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TravelEaseDataSetReport2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TravelEaseDataSetReport2" msprop:Generator_DataSetName="TravelEaseDataSetReport2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PreferredTripTypes" msprop:Generator_RowEvHandlerName="PreferredTripTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="PreferredTripTypesRowDeleted" msprop:Generator_RowDeletingName="PreferredTripTypesRowDeleting" msprop:Generator_RowEvArgName="PreferredTripTypesRowChangeEvent" msprop:Generator_TablePropName="PreferredTripTypes" msprop:Generator_RowChangedName="PreferredTripTypesRowChanged" msprop:Generator_RowChangingName="PreferredTripTypesRowChanging" msprop:Generator_TableClassName="PreferredTripTypesDataTable" msprop:Generator_RowClassName="PreferredTripTypesRow" msprop:Generator_TableVarName="tablePreferredTripTypes" msprop:Generator_UserTableName="PreferredTripTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TripType" msprop:Generator_ColumnPropNameInRow="TripType" msprop:Generator_ColumnPropNameInTable="TripTypeColumn" msprop:Generator_ColumnVarNameInTable="columnTripType" msprop:Generator_UserColumnName="TripType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookingCount" msprop:Generator_ColumnPropNameInRow="BookingCount" msprop:Generator_ColumnPropNameInTable="BookingCountColumn" msprop:Generator_ColumnVarNameInTable="columnBookingCount" msprop:Generator_UserColumnName="BookingCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TravelerAgeNationalityDistribution" msprop:Generator_RowEvHandlerName="TravelerAgeNationalityDistributionRowChangeEventHandler" msprop:Generator_RowDeletedName="TravelerAgeNationalityDistributionRowDeleted" msprop:Generator_RowDeletingName="TravelerAgeNationalityDistributionRowDeleting" msprop:Generator_RowEvArgName="TravelerAgeNationalityDistributionRowChangeEvent" msprop:Generator_TablePropName="TravelerAgeNationalityDistribution" msprop:Generator_RowChangedName="TravelerAgeNationalityDistributionRowChanged" msprop:Generator_RowChangingName="TravelerAgeNationalityDistributionRowChanging" msprop:Generator_TableClassName="TravelerAgeNationalityDistributionDataTable" msprop:Generator_RowClassName="TravelerAgeNationalityDistributionRow" msprop:Generator_TableVarName="tableTravelerAgeNationalityDistribution" msprop:Generator_UserTableName="TravelerAgeNationalityDistribution">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nationality" msprop:Generator_ColumnPropNameInRow="Nationality" msprop:Generator_ColumnPropNameInTable="NationalityColumn" msprop:Generator_ColumnVarNameInTable="columnNationality" msprop:Generator_UserColumnName="Nationality">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="TravelerCount" msprop:Generator_ColumnPropNameInRow="TravelerCount" msprop:Generator_ColumnPropNameInTable="TravelerCountColumn" msprop:Generator_ColumnVarNameInTable="columnTravelerCount" msprop:Generator_UserColumnName="TravelerCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TravelerSpendingHabits" msprop:Generator_RowEvHandlerName="TravelerSpendingHabitsRowChangeEventHandler" msprop:Generator_RowDeletedName="TravelerSpendingHabitsRowDeleted" msprop:Generator_RowDeletingName="TravelerSpendingHabitsRowDeleting" msprop:Generator_RowEvArgName="TravelerSpendingHabitsRowChangeEvent" msprop:Generator_TablePropName="TravelerSpendingHabits" msprop:Generator_RowChangedName="TravelerSpendingHabitsRowChanged" msprop:Generator_RowChangingName="TravelerSpendingHabitsRowChanging" msprop:Generator_TableClassName="TravelerSpendingHabitsDataTable" msprop:Generator_RowClassName="TravelerSpendingHabitsRow" msprop:Generator_TableVarName="tableTravelerSpendingHabits" msprop:Generator_UserTableName="TravelerSpendingHabits">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TravelerID" msprop:Generator_ColumnPropNameInRow="TravelerID" msprop:Generator_ColumnPropNameInTable="TravelerIDColumn" msprop:Generator_ColumnVarNameInTable="columnTravelerID" msprop:Generator_UserColumnName="TravelerID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TravelerName" msprop:Generator_ColumnPropNameInRow="TravelerName" msprop:Generator_ColumnPropNameInTable="TravelerNameColumn" msprop:Generator_ColumnVarNameInTable="columnTravelerName" msprop:Generator_UserColumnName="TravelerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalBookings" msprop:Generator_ColumnPropNameInRow="TotalBookings" msprop:Generator_ColumnPropNameInTable="TotalBookingsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalBookings" msprop:Generator_UserColumnName="TotalBookings" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalSpent" msprop:Generator_ColumnPropNameInRow="TotalSpent" msprop:Generator_ColumnPropNameInTable="TotalSpentColumn" msprop:Generator_ColumnVarNameInTable="columnTotalSpent" msprop:Generator_UserColumnName="TotalSpent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AverageSpending" msprop:Generator_ColumnPropNameInRow="AverageSpending" msprop:Generator_ColumnPropNameInTable="AverageSpendingColumn" msprop:Generator_ColumnVarNameInTable="columnAverageSpending" msprop:Generator_UserColumnName="AverageSpending" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

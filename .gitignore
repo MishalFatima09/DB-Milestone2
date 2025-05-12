@@ -1,5 +1,38 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
 
 /obj/Debug/DesignTimeResolveAssemblyReferences.cache
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+# Auto-generated files
+*.cache
+*.dbmdl
+*.pdb
+*.exe
+*.dll
+
+# Project files to ignore
+*.csproj.FileListAbsolute.txt
+*.csproj.GenerateResource.cache
+*.CoreCompileInputs.cache
+DesignTimeResolveAssemblyReferencesInput.cache
+
+# Debug/Release folders
+**/Debug/
+**/Release/
+
+# Others
+*.tlog
+*.tmp
+*.bak
+*.swp
+*.orig
+*.rej
