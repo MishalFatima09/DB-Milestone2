@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TravelEaseDataSet5" targetNamespace="http://tempuri.org/TravelEaseDataSet5.xsd" xmlns:mstns="http://tempuri.org/TravelEaseDataSet5.xsd" xmlns="http://tempuri.org/TravelEaseDataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TravelerSpendingHabitsTableAdapter" GeneratorDataComponentClassName="TravelerSpendingHabitsTableAdapter" Name="TravelerSpendingHabits" UserDataComponentName="TravelerSpendingHabitsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.TravelerSpendingHabits" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TravelerID, TravelerName, TotalBookings, TotalSpent, AverageSpending FROM dbo.TravelerSpendingHabits</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TravelerID" DataSetColumn="TravelerID" />
+              <Mapping SourceColumn="TravelerName" DataSetColumn="TravelerName" />
+              <Mapping SourceColumn="TotalBookings" DataSetColumn="TotalBookings" />
+              <Mapping SourceColumn="TotalSpent" DataSetColumn="TotalSpent" />
+              <Mapping SourceColumn="AverageSpending" DataSetColumn="AverageSpending" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TravelEaseDataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TravelEaseDataSet5" msprop:Generator_DataSetName="TravelEaseDataSet5">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TravelerSpendingHabits" msprop:Generator_RowEvHandlerName="TravelerSpendingHabitsRowChangeEventHandler" msprop:Generator_RowDeletedName="TravelerSpendingHabitsRowDeleted" msprop:Generator_RowDeletingName="TravelerSpendingHabitsRowDeleting" msprop:Generator_RowEvArgName="TravelerSpendingHabitsRowChangeEvent" msprop:Generator_TablePropName="TravelerSpendingHabits" msprop:Generator_RowChangedName="TravelerSpendingHabitsRowChanged" msprop:Generator_RowChangingName="TravelerSpendingHabitsRowChanging" msprop:Generator_TableClassName="TravelerSpendingHabitsDataTable" msprop:Generator_RowClassName="TravelerSpendingHabitsRow" msprop:Generator_TableVarName="tableTravelerSpendingHabits" msprop:Generator_UserTableName="TravelerSpendingHabits">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TravelerID" msprop:Generator_ColumnPropNameInRow="TravelerID" msprop:Generator_ColumnPropNameInTable="TravelerIDColumn" msprop:Generator_ColumnVarNameInTable="columnTravelerID" msprop:Generator_UserColumnName="TravelerID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TravelerName" msprop:Generator_ColumnPropNameInRow="TravelerName" msprop:Generator_ColumnPropNameInTable="TravelerNameColumn" msprop:Generator_ColumnVarNameInTable="columnTravelerName" msprop:Generator_UserColumnName="TravelerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalBookings" msprop:Generator_ColumnPropNameInRow="TotalBookings" msprop:Generator_ColumnPropNameInTable="TotalBookingsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalBookings" msprop:Generator_UserColumnName="TotalBookings" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalSpent" msprop:Generator_ColumnPropNameInRow="TotalSpent" msprop:Generator_ColumnPropNameInTable="TotalSpentColumn" msprop:Generator_ColumnVarNameInTable="columnTotalSpent" msprop:Generator_UserColumnName="TotalSpent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AverageSpending" msprop:Generator_ColumnPropNameInRow="AverageSpending" msprop:Generator_ColumnPropNameInTable="AverageSpendingColumn" msprop:Generator_ColumnVarNameInTable="columnAverageSpending" msprop:Generator_UserColumnName="AverageSpending" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -13,26 +13,26 @@ using TravelEase;
 
 namespace DB_M2_Chat
 {
-    public partial class TransportPerformance : Form
+    public partial class ServiceUse : Form
     {
-        public TransportPerformance()
+        public ServiceUse()
         {
             InitializeComponent();
         }
 
-        private void TransportPerformance_Load(object sender, EventArgs e)
+        private void ServiceUse_Load(object sender, EventArgs e)
         {
             string connectionString = DbConfig.ConnectionString;
 
-            string query = "SELECT * FROM TransportOnTime";
+            string query = "SELECT * FROM ServiceUse";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "TransportPerformance");
+                adapter.Fill(ds, "ServiceUse");
 
-                ReportDataSource rds = new ReportDataSource("TransportPerformance", ds.Tables["TransportPerformance"]);
+                ReportDataSource rds = new ReportDataSource("ServiceUse", ds.Tables["ServiceUse"]);
 
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);
@@ -41,13 +41,12 @@ namespace DB_M2_Chat
             }
             this.reportViewer1.RefreshReport();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceUse tp = new ServiceUse();
+            OpRating tp = new OpRating();
             tp.Show();  // Show the new form normally
             this.Hide();
         }
-
-
     }
 }

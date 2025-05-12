@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ServiceUsage" targetNamespace="http://tempuri.org/ServiceUsage.xsd" xmlns:mstns="http://tempuri.org/ServiceUsage.xsd" xmlns="http://tempuri.org/ServiceUsage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ServiceUseTableAdapter" GeneratorDataComponentClassName="ServiceUseTableAdapter" Name="ServiceUse" UserDataComponentName="ServiceUseTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.ServiceUse" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ServiceID, ServiceType, ServiceName, TotalAssignments, Capacity, UtilizationRate FROM dbo.ServiceUse</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ServiceID" DataSetColumn="ServiceID" />
+              <Mapping SourceColumn="ServiceType" DataSetColumn="ServiceType" />
+              <Mapping SourceColumn="ServiceName" DataSetColumn="ServiceName" />
+              <Mapping SourceColumn="TotalAssignments" DataSetColumn="TotalAssignments" />
+              <Mapping SourceColumn="Capacity" DataSetColumn="Capacity" />
+              <Mapping SourceColumn="UtilizationRate" DataSetColumn="UtilizationRate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ServiceUsage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ServiceUsage" msprop:Generator_DataSetName="ServiceUsage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ServiceUse" msprop:Generator_RowEvHandlerName="ServiceUseRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceUseRowDeleted" msprop:Generator_RowDeletingName="ServiceUseRowDeleting" msprop:Generator_RowEvArgName="ServiceUseRowChangeEvent" msprop:Generator_TablePropName="ServiceUse" msprop:Generator_RowChangedName="ServiceUseRowChanged" msprop:Generator_RowChangingName="ServiceUseRowChanging" msprop:Generator_TableClassName="ServiceUseDataTable" msprop:Generator_RowClassName="ServiceUseRow" msprop:Generator_TableVarName="tableServiceUse" msprop:Generator_UserTableName="ServiceUse">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServiceID" msprop:Generator_ColumnPropNameInRow="ServiceID" msprop:Generator_ColumnPropNameInTable="ServiceIDColumn" msprop:Generator_ColumnVarNameInTable="columnServiceID" msprop:Generator_UserColumnName="ServiceID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceType" msprop:Generator_ColumnPropNameInRow="ServiceType" msprop:Generator_ColumnPropNameInTable="ServiceTypeColumn" msprop:Generator_ColumnVarNameInTable="columnServiceType" msprop:Generator_UserColumnName="ServiceType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceName" msprop:Generator_ColumnPropNameInRow="ServiceName" msprop:Generator_ColumnPropNameInTable="ServiceNameColumn" msprop:Generator_ColumnVarNameInTable="columnServiceName" msprop:Generator_UserColumnName="ServiceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalAssignments" msprop:Generator_ColumnPropNameInRow="TotalAssignments" msprop:Generator_ColumnPropNameInTable="TotalAssignmentsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalAssignments" msprop:Generator_UserColumnName="TotalAssignments" type="xs:int" minOccurs="0" />
+              <xs:element name="Capacity" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Capacity" msprop:Generator_ColumnPropNameInTable="CapacityColumn" msprop:Generator_ColumnVarNameInTable="columnCapacity" msprop:Generator_UserColumnName="Capacity" type="xs:int" minOccurs="0" />
+              <xs:element name="UtilizationRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="UtilizationRate" msprop:Generator_ColumnPropNameInTable="UtilizationRateColumn" msprop:Generator_ColumnVarNameInTable="columnUtilizationRate" msprop:Generator_UserColumnName="UtilizationRate" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ServiceUse" />
+      <xs:field xpath="mstns:ServiceID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
