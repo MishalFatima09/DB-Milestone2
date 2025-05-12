@@ -128,21 +128,21 @@ namespace TravelEase.Forms
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new Point(30, 420);
-            this.btnAdd.Size = new Size(100, 35);
-            this.btnAdd.Text = "➕ Add New";
-            this.btnAdd.FlatStyle = FlatStyle.Flat;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.Font = new Font("Segoe UI", 9);
-            this.btnAdd.BackColor = Color.FromArgb(46, 139, 87); // Green
-            this.btnAdd.ForeColor = Color.White;
-            this.btnAdd.Cursor = Cursors.Hand;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            //this.btnAdd.Location = new Point(30, 420);
+            //this.btnAdd.Size = new Size(100, 35);
+            //this.btnAdd.Text = "➕ Add New";
+            //this.btnAdd.FlatStyle = FlatStyle.Flat;
+            //this.btnAdd.FlatAppearance.BorderSize = 0;
+            //this.btnAdd.Font = new Font("Segoe UI", 9);
+            //this.btnAdd.BackColor = Color.FromArgb(46, 139, 87); // Green
+            //this.btnAdd.ForeColor = Color.White;
+            //this.btnAdd.Cursor = Cursors.Hand;
+            //this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new Point(140, 420);
+            this.btnEdit.Location = new Point(30, 420);
             this.btnEdit.Size = new Size(100, 35);
             this.btnEdit.Text = "✏️ Edit";
             this.btnEdit.FlatStyle = FlatStyle.Flat;
@@ -156,7 +156,7 @@ namespace TravelEase.Forms
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new Point(250, 420);
+            this.btnDelete.Location = new Point(140, 420);
             this.btnDelete.Size = new Size(100, 35);
             this.btnDelete.Text = "🗑️ Delete";
             this.btnDelete.FlatStyle = FlatStyle.Flat;
@@ -170,7 +170,7 @@ namespace TravelEase.Forms
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new Point(360, 420);
+            this.btnRefresh.Location = new Point(250, 420);
             this.btnRefresh.Size = new Size(100, 35);
             this.btnRefresh.Text = "🔄 Refresh";
             this.btnRefresh.FlatStyle = FlatStyle.Flat;
