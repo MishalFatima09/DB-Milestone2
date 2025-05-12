@@ -41,7 +41,7 @@ namespace DB_M2_Chat
         }
 
         public void ClearUserInfo()
-        {
+        {   
             ProviderID = null;
             Username = null;
             ProviderName = null;
