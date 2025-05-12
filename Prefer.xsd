@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Prefer" targetNamespace="http://tempuri.org/Prefer.xsd" xmlns:mstns="http://tempuri.org/Prefer.xsd" xmlns="http://tempuri.org/Prefer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TravelEaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TravelEaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB_M2_Chat.Properties.Settings.GlobalReference.Default.TravelEaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PreferredTripTypesTableAdapter" GeneratorDataComponentClassName="PreferredTripTypesTableAdapter" Name="PreferredTripTypes" UserDataComponentName="PreferredTripTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TravelEaseConnectionString (Settings)" DbObjectName="TravelEase.dbo.PreferredTripTypes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TripType, BookingCount FROM dbo.PreferredTripTypes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TripType" DataSetColumn="TripType" />
+              <Mapping SourceColumn="BookingCount" DataSetColumn="BookingCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Prefer" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Prefer" msprop:Generator_DataSetName="Prefer">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PreferredTripTypes" msprop:Generator_RowEvHandlerName="PreferredTripTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="PreferredTripTypesRowDeleted" msprop:Generator_RowDeletingName="PreferredTripTypesRowDeleting" msprop:Generator_RowEvArgName="PreferredTripTypesRowChangeEvent" msprop:Generator_TablePropName="PreferredTripTypes" msprop:Generator_RowChangedName="PreferredTripTypesRowChanged" msprop:Generator_RowChangingName="PreferredTripTypesRowChanging" msprop:Generator_TableClassName="PreferredTripTypesDataTable" msprop:Generator_RowClassName="PreferredTripTypesRow" msprop:Generator_TableVarName="tablePreferredTripTypes" msprop:Generator_UserTableName="PreferredTripTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TripType" msprop:Generator_ColumnPropNameInRow="TripType" msprop:Generator_ColumnPropNameInTable="TripTypeColumn" msprop:Generator_ColumnVarNameInTable="columnTripType" msprop:Generator_UserColumnName="TripType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookingCount" msprop:Generator_ColumnPropNameInRow="BookingCount" msprop:Generator_ColumnPropNameInTable="BookingCountColumn" msprop:Generator_ColumnVarNameInTable="columnBookingCount" msprop:Generator_UserColumnName="BookingCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

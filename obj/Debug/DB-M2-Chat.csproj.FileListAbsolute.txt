@@ -115,3 +115,6 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.ServiceUse.r
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpRating.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpResponse.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpRevenue.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Dist.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Preferred.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Spending.resources

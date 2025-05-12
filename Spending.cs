@@ -13,39 +13,42 @@ using TravelEase;
 
 namespace DB_M2_Chat
 {
-    public partial class OpResponse : Form
+    public partial class Spending : Form
     {
-        public OpResponse()
+        public Spending()
         {
             InitializeComponent();
-            this.BackColor = Color.FromArgb(11, 57, 84);
         }
 
-        private void OpResponse_Load(object sender, EventArgs e)
+        private void Spending_Load(object sender, EventArgs e)
         {
+            //Spending
+
             string connectionString = DbConfig.ConnectionString;
 
-            string query = "SELECT * FROM OpResponse";
+            string query = "SELECT * FROM TravelerSpendingHabits";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "OpResponse");
+                adapter.Fill(ds, "Spending");
 
-                ReportDataSource rds = new ReportDataSource("OpResponse", ds.Tables["OpResponse"]);
+                ReportDataSource rds = new ReportDataSource("Spending", ds.Tables["Spending"]);
 
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
                 this.reportViewer1.RefreshReport();
             }
+
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Spending tp = new Spending();
+            Preferred tp = new Preferred();
             tp.Show();  // Show the new form normally
             this.Hide();
         }
