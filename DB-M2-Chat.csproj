@@ -162,6 +162,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReviewModerationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewModerationForm.Designer.cs">
+      <DependentUpon>ReviewModerationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchTripsForm.cs">
       <SubType>Form</SubType>
     </Compile>
