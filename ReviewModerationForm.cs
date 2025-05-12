@@ -350,7 +350,7 @@ namespace TravelEase.Forms
         public ReviewModerationForm()
         {
             InitializeComponent();
-            connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+            //connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
         }
 
         private void ReviewModerationForm_Load(object sender, EventArgs e)
@@ -367,7 +367,8 @@ namespace TravelEase.Forms
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 

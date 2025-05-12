@@ -8,7 +8,6 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\bin\Debug\DB-M2-Chat.exe
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\bin\Debug\DB-M2-Chat.pdb
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB-M2-Chat.exe
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB-M2-Chat.pdb
-C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.AddServiceForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.AddTripForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.AdminMainForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.AnalyticsForm.resources
@@ -23,7 +22,6 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.Provid
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.RegisterForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.SearchTripsForm.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.TravelerMainForm.resources
-C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\TravelEase.Forms.UserManagementForm.resources
 C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.exe.config
 C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.exe
 C:\Users\aleen\source\repos\DB-Milestone2\bin\Debug\DB-M2-Chat.pdb
@@ -116,3 +114,5 @@ C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.OpRevenue.re
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Dist.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Preferred.resources
 C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.Spending.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.AddServiceForm.resources
+C:\Users\HP\source\repos\DB-M2-Chat\DB-M2-Chat\obj\Debug\DB_M2_Chat.UserManagementForm.resources

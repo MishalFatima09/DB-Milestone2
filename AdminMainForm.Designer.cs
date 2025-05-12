@@ -29,10 +29,12 @@ namespace TravelEase.Forms
             this.btnAnalytics = CreateSidebarButton("📊", "Platform Analysis", 170);
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
 
-            this.btnReports = CreateSidebarButton("📄", "Reports", 270);
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             this.btnReviewMod = CreateSidebarButton("⭐", "Review Moderation", 220);
             this.btnReviewMod.Click += new System.EventHandler(this.btnReviewMod_Click);
+
+            this.btnReports = CreateSidebarButton("📄", "Reports", 270);
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+
 
             // 
             // AdminMainForm

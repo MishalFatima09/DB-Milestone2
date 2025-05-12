@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using TravelEase;
 
 namespace DB_M2_Chat
 {
     public partial class AllServicesForm : Form
     {
         // Connection string
-        private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+       // private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
         private enum ServiceType
         {
@@ -104,7 +105,7 @@ namespace DB_M2_Chat
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
                 {
                     connection.Open();
 
@@ -255,7 +256,8 @@ namespace DB_M2_Chat
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -367,7 +369,8 @@ namespace DB_M2_Chat
             {
                 dgvServices.Rows.Clear();
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -456,7 +459,8 @@ namespace DB_M2_Chat
                 {
                     try
                     {
-                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                         {
                             connection.Open();
 

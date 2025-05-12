@@ -254,7 +254,7 @@ namespace TravelEase.Forms
         public CategoryForm()
         {
             // Retrieve connection string from app configuration
-            connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+            //connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
             InitializeComponent();
         }
@@ -273,7 +273,8 @@ namespace TravelEase.Forms
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 

@@ -784,13 +784,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelEase;
 
 namespace DB_M2_Chat
 {
     public partial class BookingManagementForm : Form
     {
         // Replace with your actual connection string
-        private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+       // private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
         private DataTable bookingsTable = new DataTable();
 
         public BookingManagementForm()
@@ -839,7 +840,8 @@ namespace DB_M2_Chat
             try
             {
                 cmbServiceId.Items.Clear();
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
                     string query = @"SELECT h.ServiceID, s.Name 
@@ -874,7 +876,8 @@ namespace DB_M2_Chat
             try
             {
                 cmbServiceId.Items.Clear();
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
                     string query = @"SELECT t.ServiceID, s.Name, t.VehicleType 
@@ -987,7 +990,8 @@ namespace DB_M2_Chat
             try
             {
                 bookingsTable.Clear();
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
                     string query = @"
@@ -1076,7 +1080,8 @@ namespace DB_M2_Chat
                 {
                     string assignmentId = dgvBookings.SelectedRows[0].Cells["AssignmentID"].Value.ToString();
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                     {
                         connection.Open();
                         string query = "UPDATE AssignedService SET Status = @Status WHERE AssignmentID = @AssignmentID";
@@ -1168,7 +1173,8 @@ namespace DB_M2_Chat
                     return;
                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -1242,7 +1248,8 @@ namespace DB_M2_Chat
                     return;
                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -1282,7 +1289,8 @@ namespace DB_M2_Chat
                 {
                     StringBuilder details = new StringBuilder();
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                     {
                         connection.Open();
                         string query = string.Empty;

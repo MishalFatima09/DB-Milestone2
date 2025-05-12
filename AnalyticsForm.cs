@@ -10,7 +10,7 @@ namespace TravelEase.Forms
     public partial class AnalyticsForm : Form
     {
         // Database connection string - MUST BE REPLACED
-        private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+      //  private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
         public AnalyticsForm()
         {
@@ -44,7 +44,8 @@ namespace TravelEase.Forms
 
         private void UpdateSummaryCards()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
             {
                 connection.Open();
 
@@ -100,8 +101,8 @@ namespace TravelEase.Forms
                 Color = Color.FromArgb(11, 57, 84),
                 BorderWidth = 3
             };
+            using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
@@ -159,7 +160,8 @@ namespace TravelEase.Forms
         {
             dgvRevenue.Rows.Clear();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
             {
                 connection.Open();
                 string query = @"
@@ -195,7 +197,8 @@ namespace TravelEase.Forms
         {
             dgvTopDestinations.Rows.Clear();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
             {
                 connection.Open();
                 string query = @"

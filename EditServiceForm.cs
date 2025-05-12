@@ -2,12 +2,13 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TravelEase;
 
 namespace DB_M2_Chat
 {
     public partial class EditServiceForm : Form
     {
-        private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+       // private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
         private readonly string serviceID;
         private readonly string serviceType;
         private readonly string providerID;
@@ -25,7 +26,8 @@ namespace DB_M2_Chat
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -114,7 +116,8 @@ namespace DB_M2_Chat
                     return;
                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 

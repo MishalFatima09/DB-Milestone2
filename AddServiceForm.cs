@@ -278,13 +278,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelEase;
 
 namespace DB_M2_Chat
 {
     public partial class AddServiceForm : Form
     {
         // Database connection string
-        private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+       // private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
         public AddServiceForm()
         {
@@ -340,7 +341,7 @@ namespace DB_M2_Chat
             string newID = prefix + "001";
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
                 {
                     connection.Open();
                     // Find the last ID with the same prefix
@@ -481,7 +482,7 @@ namespace DB_M2_Chat
             }
 
             // Begin database transaction to add service
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
             {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();

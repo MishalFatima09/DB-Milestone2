@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using TravelEase.Forms;
-using System.Data.SqlClient;
 using DB_M2_Chat;
 
 namespace TravelEase
@@ -10,7 +9,7 @@ namespace TravelEase
     public partial class LoginForm : Form
     {
         // Connection string - consider moving to app.config in a real application
-        private readonly string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+        private readonly string connectionString = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
         public LoginForm()
         {
@@ -30,8 +29,6 @@ namespace TravelEase
 
         private string GetOperatorIDFromDatabase(string username, string password)
         {
-            string 
-                String = "Data Source=MISHALSLAPPY\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;"; 
             string operatorID = null;
 
             using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
@@ -69,23 +66,27 @@ namespace TravelEase
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
+            // Check if username or password is empty
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both username and password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Type formType = null;
             if (selectedRole == "Admin")
                 formType = typeof(AdminMainForm);
             else if (selectedRole == "Operator")
             {
-                // Validate credentials (mock example)
-                string enteredUsername = txtUsername.Text;
-                string enteredPassword = txtPassword.Text;
-
-                // Replace this with your actual database check logic
-                string operatorID = GetOperatorIDFromDatabase(enteredUsername, enteredPassword); // Example
+                // Validate credentials for operator
+                string operatorID = GetOperatorIDFromDatabase(username, password);
 
                 if (operatorID != null)
                 {
                     this.Hide();
                     var t = new System.Threading.Thread(() =>
                     {
-                        Application.Run(new OperatorMainForm(operatorID)); 
+                        Application.Run(new OperatorMainForm(operatorID));
                     });
                     t.SetApartmentState(System.Threading.ApartmentState.STA);
                     t.Start();
@@ -101,12 +102,6 @@ namespace TravelEase
                 formType = typeof(TravelerMainForm);
             else if (selectedRole == "Provider")
                 formType = typeof(ProviderMainForm);
-
-            if (formType != null)
-            {
-                MessageBox.Show("Please enter both username and password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             // Authentication logic using Users table
             try
@@ -212,17 +207,6 @@ namespace TravelEase
 
                 // Login successful
                 MessageBox.Show($"Login successful! Welcome {fullName ?? username}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Get form type based on role
-                Type formType = null;
-                if (selectedRole == "Admin")
-                    formType = typeof(AdminMainForm);
-                else if (selectedRole == "Operator")
-                    formType = typeof(OperatorMainForm);
-                else if (selectedRole == "Traveler")
-                    formType = typeof(TravelerMainForm);
-                else if (selectedRole == "Provider")
-                    formType = typeof(ProviderMainForm);
 
                 if (formType != null)
                 {

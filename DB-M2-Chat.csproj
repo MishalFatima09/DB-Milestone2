@@ -161,10 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelOccupancy.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HotelOccupancyDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HotelOccupancyDataSet.xsd</DependentUpon>
+	  <Compile Include="HotelOccupancyDataSet.Designer.cs">
+		  <AutoGen>True</AutoGen>
+		  <DesignTime>True</DesignTime>
+		  <DependentUpon>HotelOccupancyDataSet.xsd</DependentUpon>
+	  </Compile>
     <Compile Include="EditServiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,8 +247,9 @@
     <Compile Include="Preferred.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preferred.Designer.cs">
-      <DependentUpon>Preferred.cs</DependentUpon>
+	  <Compile Include="Preferred.Designer.cs">
+		  <DependentUpon>Preferred.cs</DependentUpon>
+	  </Compile>
     <Compile Include="PerformanceReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,10 +331,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelEaseDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TravelEaseDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+	  <Compile Include="TravelEaseDataSet5.Designer.cs">
+		  <AutoGen>True</AutoGen>
+		  <DesignTime>True</DesignTime>
+		  <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+	  </Compile>
     <Compile Include="ServiceIntegrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,8 +638,9 @@
       <LastGenOutput>TravelEaseDataSet5.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TravelEaseDataSet5.xss">
-      <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+	  <None Include="TravelEaseDataSet5.xss">
+		  <DependentUpon>TravelEaseDataSet5.xsd</DependentUpon>
+	  </None>
     <None Include="TravelEaseDataSetReport2.xsc">
       <DependentUpon>TravelEaseDataSetReport2.xsd</DependentUpon>
     </None>

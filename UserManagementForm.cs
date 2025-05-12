@@ -259,13 +259,14 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using TravelEase;
 
 namespace DB_M2_Chat
 {
     public partial class UserManagementForm : Form
     {
         // Database connection string - replace with your actual connection string
-        private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
+       // private string connectionString = "Data Source=ALEENA-LAPTOP\\SQLEXPRESS;Initial Catalog=TravelEase;Integrated Security=True;TrustServerCertificate=True";
 
         public UserManagementForm()
         {
@@ -285,7 +286,8 @@ namespace DB_M2_Chat
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
@@ -378,7 +380,8 @@ namespace DB_M2_Chat
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(DbConfig.ConnectionString))
+
                 {
                     connection.Open();
 
