@@ -9,7 +9,7 @@ namespace TravelEase.Forms
         private Panel sidebar, contentPanel;
         private Timer sidebarTimer;
         private Label lblTitle;
-        private Button btnSearchTrips, btnMyBookings, btnProfile;
+        private Button btnSearchTrips, btnTripDashboard, btnDigitalPass, btnMyBookings, btnReviews, btnProfile;
 
         private void InitializeComponent()
         {
@@ -51,21 +51,33 @@ namespace TravelEase.Forms
                 TextAlign = ContentAlignment.MiddleCenter
             };
 
-            // Sidebar buttons
-            btnSearchTrips = CreateSidebarButton("🔍", "Search Trips", 70);
-            this.btnSearchTrips.Click += new EventHandler(this.btnSearchTrips_Click);
+            // Sidebar buttons - Reordered based on frequency of use
+            btnTripDashboard = CreateSidebarButton("📊", "Trip Dashboard", 70);
+            btnTripDashboard.Click += new EventHandler(this.btnTripDashboard_Click);
 
-            btnMyBookings = CreateSidebarButton("📅", "My Bookings", 120);
-            this.btnMyBookings.Click += new EventHandler(this.btnMyBookings_Click);
+            btnSearchTrips = CreateSidebarButton("🔍", "Search Trips", 120);
+            btnSearchTrips.Click += new EventHandler(this.btnSearchTrips_Click);
 
-            btnProfile = CreateSidebarButton("✏️", "Edit Profile", 170);
-            this.btnProfile.Click += new EventHandler(this.btnProfile_Click);
+            btnMyBookings = CreateSidebarButton("📅", "My Bookings", 170);
+            btnMyBookings.Click += new EventHandler(this.btnMyBookings_Click);
+
+            btnDigitalPass = CreateSidebarButton("🎫", "Digital Pass", 220);
+            btnDigitalPass.Click += new EventHandler(this.btnDigitalPass_Click);
+
+            btnReviews = CreateSidebarButton("⭐", "Reviews", 270);
+            btnReviews.Click += new EventHandler(this.btnReviews_Click);
+
+            btnProfile = CreateSidebarButton("✏️", "Edit Profile", 320);
+            btnProfile.Click += new EventHandler(this.btnProfile_Click);
 
             // Assemble sidebar
             sidebar.Controls.AddRange(new Control[] {
                 lblTitle,
+                btnTripDashboard,
                 btnSearchTrips,
                 btnMyBookings,
+                btnDigitalPass,
+                btnReviews,
                 btnProfile
             });
 
@@ -93,7 +105,6 @@ namespace TravelEase.Forms
             btn.FlatAppearance.BorderSize = 0;
             btn.MouseEnter += Sidebar_MouseEnter;
             btn.MouseLeave += Sidebar_MouseLeave;
-            btn.Click += (sender, e) => { /* Click handled in main file */ };
             return btn;
         }
     }
