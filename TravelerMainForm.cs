@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
+using DB_M2_Chat;
 
 namespace TravelEase.Forms
 {
@@ -18,7 +19,8 @@ namespace TravelEase.Forms
 
         private void TravelerMainForm_Load(object sender, EventArgs e)
         {
-            // any startup logic
+            // Load default view - Trip Dashboard
+            //btnTripDashboard_Click(sender, e);
         }
 
         private void Sidebar_MouseEnter(object sender, EventArgs e)
@@ -88,10 +90,34 @@ namespace TravelEase.Forms
             form.Show();
         }
 
+        private void btnTripDashboard_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new TripDashboardForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnDigitalPass_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new DigitalPassForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
+
         private void btnMyBookings_Click(object sender, EventArgs e)
         {
             contentPanel.Controls.Clear();
             var form = new MyBookingsForm { TopLevel = false, Dock = DockStyle.Fill };
+            contentPanel.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnReviews_Click(object sender, EventArgs e)
+        {
+            contentPanel.Controls.Clear();
+            var form = new TravelerReviewsForm { TopLevel = false, Dock = DockStyle.Fill };
             contentPanel.Controls.Add(form);
             form.Show();
         }
